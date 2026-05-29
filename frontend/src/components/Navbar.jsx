@@ -43,10 +43,7 @@ export default function Navbar() {
               <div className="w-10 h-10 bg-white rounded-sm overflow-hidden flex items-center justify-center transition-transform group-hover:scale-105">
                 <img src={LOGO_URL} alt="SVB Constructions Logo" className="w-full h-full object-contain" />
               </div>
-              <div className="flex flex-col">
-                <span className="text-white font-sora font-semibold text-sm leading-tight">SVB Constructions</span>
-                <span className="text-[#C8A96B] text-[11px] leading-tight tracking-wide">Premium Civil Engineering</span>
-              </div>
+              <span className="text-white font-sora font-semibold text-sm leading-tight">SVB Constructions</span>
             </a>
 
             {/* Desktop Nav */}
