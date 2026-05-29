@@ -1,34 +1,40 @@
-.App-logo {
-    height: 40vmin;
-    pointer-events: none;
+/* Global app styles — keep minimal, use Tailwind classes in components */
+
+* {
+  box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
-    }
+/* Smooth image rendering */
+img {
+  max-width: 100%;
+  height: auto;
 }
 
-.App-header {
-    background-color: #0f0f10;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
+/* Remove default button styles */
+button {
+  cursor: pointer;
 }
 
-.App-link {
-    color: #61dafb;
+/* Focus visible styles for accessibility */
+:focus-visible {
+  outline: 2px solid #C8A96B;
+  outline-offset: 2px;
 }
 
-@keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+/* Section fade-in animation utility */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Gold shimmer animation */
+@keyframes shimmer {
+  0% { background-position: -1000px 0; }
+  100% { background-position: 1000px 0; }
+}
+
+.shimmer-gold {
+  background: linear-gradient(90deg, #C8A96B 0%, #f0d090 50%, #C8A96B 100%);
+  background-size: 1000px 100%;
+  animation: shimmer 3s linear infinite;
 }

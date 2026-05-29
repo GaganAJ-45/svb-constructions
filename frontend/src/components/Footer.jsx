@@ -1,0 +1,187 @@
+import { motion } from "framer-motion";
+import { Building2, Phone, Mail, Instagram, MessageCircle } from "lucide-react";
+
+const services = [
+  "Planning & Design",
+  "3D Visualization",
+  "Interior Design",
+  "Cost Estimation",
+  "Expert Consulting",
+  "Construction Management",
+];
+
+const company = [
+  { label: "Home", href: "#home" },
+  { label: "About Us", href: "#about" },
+  { label: "Portfolio", href: "#portfolio" },
+  { label: "Our Team", href: "#team" },
+  { label: "Certifications", href: "#certifications" },
+  { label: "Contact", href: "#contact" },
+];
+
+export default function Footer() {
+  return (
+    <footer data-testid="footer" className="bg-[#001F3F] text-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+          {/* Column 1: Brand */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <a href="#home" className="flex items-center gap-3 mb-5 group">
+              <div className="w-10 h-10 bg-[#C8A96B] flex items-center justify-center rounded-sm">
+                <Building2 size={20} color="#001F3F" strokeWidth={2} />
+              </div>
+              <div className="flex flex-col">
+                <span className="font-sora font-semibold text-sm leading-tight">SVB Constructions</span>
+                <span className="text-[#C8A96B] text-[11px] leading-tight">Premium Civil Engineering</span>
+              </div>
+            </a>
+            <p className="text-[#94A3B8] text-sm leading-relaxed mb-5">
+              Shree Veerabhadreshwara Constructions — delivering premium civil engineering and construction solutions across Karnataka since 2009.
+            </p>
+            <p className="text-[#C8A96B] text-xs uppercase tracking-widest font-medium">
+              Bengaluru, Karnataka, India
+            </p>
+          </motion.div>
+
+          {/* Column 2: Services */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+          >
+            <h4 className="font-sora font-semibold text-white text-sm uppercase tracking-wider mb-5">
+              Services
+            </h4>
+            <ul className="space-y-2.5">
+              {services.map((s) => (
+                <li key={s}>
+                  <a
+                    href="#services"
+                    data-testid={`footer-service-${s.toLowerCase().replace(/\s+/g, "-")}`}
+                    className="text-[#94A3B8] text-sm hover:text-[#C8A96B] transition-colors duration-200"
+                  >
+                    {s}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+
+          {/* Column 3: Company */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            <h4 className="font-sora font-semibold text-white text-sm uppercase tracking-wider mb-5">
+              Company
+            </h4>
+            <ul className="space-y-2.5">
+              {company.map((c) => (
+                <li key={c.label}>
+                  <a
+                    href={c.href}
+                    data-testid={`footer-link-${c.label.toLowerCase().replace(/\s+/g, "-")}`}
+                    className="text-[#94A3B8] text-sm hover:text-[#C8A96B] transition-colors duration-200"
+                  >
+                    {c.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+
+          {/* Column 4: Contact */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+          >
+            <h4 className="font-sora font-semibold text-white text-sm uppercase tracking-wider mb-5">
+              Contact
+            </h4>
+            <div className="space-y-3 mb-6">
+              <a
+                href="tel:+919035911632"
+                data-testid="footer-phone-1"
+                className="flex items-center gap-2 text-[#94A3B8] text-sm hover:text-[#C8A96B] transition-colors"
+              >
+                <Phone size={14} strokeWidth={1.5} />
+                +91 9035911632
+              </a>
+              <a
+                href="tel:+916361638075"
+                data-testid="footer-phone-2"
+                className="flex items-center gap-2 text-[#94A3B8] text-sm hover:text-[#C8A96B] transition-colors"
+              >
+                <Phone size={14} strokeWidth={1.5} />
+                +91 63616 38075
+              </a>
+              <a
+                href="mailto:svbrconstructions@gmail.com"
+                data-testid="footer-email"
+                className="flex items-center gap-2 text-[#94A3B8] text-sm hover:text-[#C8A96B] transition-colors break-all"
+              >
+                <Mail size={14} strokeWidth={1.5} />
+                svbrconstructions@gmail.com
+              </a>
+            </div>
+
+            {/* Social icons */}
+            <div className="flex items-center gap-4 mb-5">
+              <a
+                href="#"
+                data-testid="footer-instagram"
+                className="text-[#94A3B8] hover:text-[#C8A96B] transition-colors hover:scale-110 transform"
+                aria-label="Instagram"
+              >
+                <Instagram size={20} strokeWidth={1.5} />
+              </a>
+              <a
+                href="https://wa.me/919035911632"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-testid="footer-whatsapp"
+                className="text-[#94A3B8] hover:text-[#25D366] transition-colors hover:scale-110 transform"
+                aria-label="WhatsApp"
+              >
+                <MessageCircle size={20} strokeWidth={1.5} />
+              </a>
+            </div>
+
+            {/* WhatsApp CTA button */}
+            <a
+              href="https://wa.me/919035911632"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-testid="footer-whatsapp-btn"
+              className="inline-flex items-center gap-2 bg-[#25D366] text-white text-sm font-semibold px-5 py-2.5 rounded-lg hover:bg-[#1fb855] transition-colors duration-200"
+            >
+              <MessageCircle size={16} strokeWidth={1.5} />
+              Chat on WhatsApp
+            </a>
+          </motion.div>
+        </div>
+
+        {/* Bottom bar */}
+        <div className="border-t border-[#C8A96B]/15 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-[#94A3B8] text-xs text-center sm:text-left">
+            &copy; {new Date().getFullYear()} Shree Veerabhadreshwara Constructions. All rights reserved.
+          </p>
+          <p className="text-[#94A3B8] text-xs">
+            Built with{" "}
+            <span className="text-[#C8A96B]">engineering precision</span>
+          </p>
+        </div>
+      </div>
+    </footer>
+  );
+}
