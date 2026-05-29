@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Phone, Menu, X, Building2 } from "lucide-react";
+import { Phone, Menu, X } from "lucide-react";
+
+const LOGO_URL = "https://customer-assets.emergentagent.com/job_svb-constructions/artifacts/33nhlam1_company_logo.jpeg";
 
 const navLinks = [
   { label: "Home", href: "#home" },
@@ -38,8 +40,8 @@ export default function Navbar() {
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
             <a href="#home" data-testid="navbar-logo" className="flex items-center gap-3 group">
-              <div className="w-10 h-10 bg-[#C8A96B] flex items-center justify-center rounded-sm transition-transform group-hover:scale-105">
-                <Building2 size={20} color="#001F3F" strokeWidth={2} />
+              <div className="w-10 h-10 bg-white rounded-sm overflow-hidden flex items-center justify-center transition-transform group-hover:scale-105">
+                <img src={LOGO_URL} alt="SVB Constructions Logo" className="w-full h-full object-contain" />
               </div>
               <div className="flex flex-col">
                 <span className="text-white font-sora font-semibold text-sm leading-tight">SVB Constructions</span>

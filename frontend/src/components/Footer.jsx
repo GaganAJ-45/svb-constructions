@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
-import { Building2, Phone, Mail, Instagram, MessageCircle } from "lucide-react";
+import { Phone, Mail, Instagram, MessageCircle } from "lucide-react";
+
+const LOGO_URL = "https://customer-assets.emergentagent.com/job_svb-constructions/artifacts/33nhlam1_company_logo.jpeg";
 
 const WA_LINK = `https://wa.me/919035911632?text=${encodeURIComponent("Hi, I'm interested in your construction services at SVB Constructions. Can you please provide more details?")}`;
 
@@ -33,8 +35,8 @@ export default function Footer() {
             transition={{ duration: 0.5 }}
           >
             <a href="#home" className="flex items-center gap-3 mb-5 group">
-              <div className="w-10 h-10 bg-[#C8A96B] flex items-center justify-center rounded-sm">
-                <Building2 size={20} color="#001F3F" strokeWidth={2} />
+              <div className="w-12 h-12 bg-white rounded-sm overflow-hidden flex items-center justify-center">
+                <img src={LOGO_URL} alt="SVB Constructions Logo" className="w-full h-full object-contain" />
               </div>
               <div className="flex flex-col">
                 <span className="font-sora font-semibold text-sm leading-tight">SVB Constructions</span>

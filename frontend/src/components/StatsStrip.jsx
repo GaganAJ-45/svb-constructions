@@ -3,7 +3,7 @@ import { motion, useInView } from "framer-motion";
 import { Trophy, CheckSquare, Smile } from "lucide-react";
 
 const stats = [
-  { icon: Trophy, number: 10, suffix: "+", label: "Years Experience", desc: "Serving since 2009" },
+  { icon: Trophy, number: 10, suffix: "+", label: "Years Experience", desc: "Civil Construction" },
   { icon: CheckSquare, number: 50, suffix: "+", label: "Projects Completed", desc: "Across Karnataka" },
   { icon: Smile, number: 99, suffix: "%", label: "Client Satisfaction", desc: "Proven track record" },
 ];
