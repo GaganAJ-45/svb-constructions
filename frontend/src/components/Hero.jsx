@@ -1,17 +1,29 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { ChevronDown } from "lucide-react";
 
 const heroImages = [
   {
-    url: "https://customer-assets.emergentagent.com/job_svb-constructions/artifacts/542rhen8_Hero_img1.jpg",
-    alt: "Civil engineer at premium construction site with crane",
+    url: "https://customer-assets.emergentagent.com/job_svb-constructions/artifacts/2n1egh9y_Hero_img1.jpg",
+    alt: "Civil engineer surveying premium construction site",
+    loading: "eager",
   },
   {
-    url: "https://customer-assets.emergentagent.com/job_svb-constructions/artifacts/2zm81vuh_Hero_img2.jpg",
+    url: "https://customer-assets.emergentagent.com/job_svb-constructions/artifacts/onqxnj66_Hero_img2.jpg",
     alt: "Modern construction with advanced engineering technology",
+    loading: "lazy",
+  },
+  {
+    url: "https://customer-assets.emergentagent.com/job_svb-constructions/artifacts/ye8vzajl_Hero_img3.jpeg",
+    alt: "Premium residential construction project",
+    loading: "lazy",
   },
 ];
+
+const anim = (delay) => ({
+  initial: { opacity: 0, y: 28 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.6, delay, ease: "easeOut" },
+});
 
 export default function Hero() {
   const [current, setCurrent] = useState(0);
@@ -27,123 +39,259 @@ export default function Hero() {
     <section
       id="home"
       data-testid="hero-section"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative min-h-screen flex items-center overflow-hidden"
     >
-      {/* Background images with Ken Burns */}
-      <div className="absolute inset-0">
+      {/* ── Background image crossfade ── */}
+      <div className="absolute inset-0 z-0">
         {heroImages.map((img, i) => (
-          <div
+          <img
             key={i}
-            className="absolute inset-0 transition-opacity duration-1000"
-            style={{ opacity: i === current ? 1 : 0 }}
-          >
-            <motion.div
-              className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-              style={{ backgroundImage: `url(${img.url})` }}
-              initial={{ scale: 1 }}
-              animate={{ scale: i === current ? 1.08 : 1.0 }}
-              transition={{ duration: 8, ease: "linear" }}
-            />
-          </div>
+            src={img.url}
+            alt={img.alt}
+            loading={img.loading}
+            className="absolute inset-0 w-full h-full object-cover object-center"
+            style={{
+              opacity: i === current ? 1 : 0,
+              transition: "opacity 1.2s ease-in-out",
+            }}
+          />
         ))}
       </div>
 
-      {/* Dark overlay */}
-      <div className="absolute inset-0 bg-[#001F3F]/55" />
+      {/* ── Dark dramatic overlay ── */}
+      <div
+        className="absolute inset-0 z-[1]"
+        style={{
+          background:
+            "linear-gradient(135deg, rgba(0,0,0,0.82) 0%, rgba(0,31,63,0.65) 50%, rgba(0,0,0,0.78) 100%)",
+          boxShadow: "inset 0 0 150px rgba(0,0,0,0.4)",
+        }}
+      />
 
-      {/* Blueprint grid overlay */}
-      <div className="absolute inset-0 blueprint-grid opacity-[0.04]" />
+      {/* ── Gold diagonal accent line (left edge) ── */}
+      <div
+        className="absolute left-8 top-1/2 -translate-y-1/2 z-[2] hidden lg:block"
+        style={{
+          width: "2px",
+          height: "180px",
+          background: "linear-gradient(to bottom, transparent 0%, #C8A96B 40%, #C8A96B 60%, transparent 100%)",
+          opacity: 0.65,
+        }}
+      />
 
-      {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-24">
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={loaded ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.9, delay: 0.2 }}
-        >
-          <motion.p
-            initial={{ opacity: 0, letterSpacing: "0.1em" }}
-            animate={loaded ? { opacity: 1, letterSpacing: "0.3em" } : {}}
-            transition={{ duration: 1, delay: 0.1 }}
-            className="text-[#C8A96B] text-xs sm:text-sm font-medium uppercase mb-6 font-inter tracking-[0.3em]"
+      {/* ── Hero content (LEFT-ALIGNED) ── */}
+      <div className="relative z-[2] w-full max-w-7xl mx-auto px-6 sm:px-10 lg:pl-24 pt-28 pb-36">
+        <div className="max-w-[720px]">
+
+          {/* Eyebrow: [line] Est. 2025 · Shivamogga, Karnataka */}
+          <motion.div
+            {...anim(0.1)}
+            animate={loaded ? { opacity: 1, y: 0 } : { opacity: 0, y: 28 }}
+            className="flex items-center gap-4 mb-7"
+            data-testid="hero-eyebrow"
           >
-            Premium Civil Engineering & Construction
+            <div className="w-10 h-px bg-[#C8A96B] flex-shrink-0" />
+            <span
+              className="text-[#C8A96B] font-inter uppercase font-medium"
+              style={{ fontSize: "12px", letterSpacing: "4px" }}
+            >
+              Est. 2025 · Shivamogga, Karnataka
+            </span>
+          </motion.div>
+
+          {/* H1 — Two lines */}
+          <div className="mb-6">
+            <motion.h1
+              initial={{ opacity: 0, y: 28 }}
+              animate={loaded ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
+              className="font-sora font-extrabold text-white block"
+              style={{
+                fontSize: "clamp(44px, 5.5vw, 82px)",
+                lineHeight: 1.08,
+                letterSpacing: "-1px",
+              }}
+            >
+              Building{" "}
+              <span
+                style={{
+                  color: "#C8A96B",
+                  textShadow: "0 0 50px rgba(200,169,107,0.45)",
+                }}
+              >
+                Excellence
+              </span>
+            </motion.h1>
+
+            <motion.h1
+              initial={{ opacity: 0, y: 28 }}
+              animate={loaded ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
+              className="font-sora font-bold text-white block"
+              style={{
+                fontSize: "clamp(44px, 5.5vw, 82px)",
+                lineHeight: 1.08,
+                letterSpacing: "-1px",
+              }}
+            >
+              Engineering Tomorrow
+            </motion.h1>
+          </div>
+
+          {/* Subtitle — single stats line */}
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={loaded ? { opacity: 1 } : {}}
+            transition={{ duration: 0.6, delay: 0.7, ease: "easeOut" }}
+            className="font-inter font-medium"
+            style={{
+              fontSize: "16px",
+              letterSpacing: "1px",
+              color: "rgba(255,255,255,0.72)",
+              marginBottom: "40px",
+              marginTop: "20px",
+            }}
+            data-testid="hero-subtitle"
+          >
+            50+ Projects
+            <span className="text-[#C8A96B] mx-3">·</span>
+            10+ Years
+            <span className="text-[#C8A96B] mx-3">·</span>
+            99% Satisfaction
           </motion.p>
 
-          <h1 className="font-sora font-bold text-5xl sm:text-6xl lg:text-7xl text-white leading-[1.15] mb-6">
-            Building{" "}
-            <span className="text-gradient-gold">Excellence</span>
-            <span className="block mt-1">Engineering Tomorrow</span>
-          </h1>
-
-          <p className="text-[#C8A96B] text-lg sm:text-xl font-inter font-medium mb-5">
-            Premier Civil Engineering & Construction Services
-          </p>
-
-          <p className="text-white/75 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed mb-12 font-inter">
-            Delivering innovative, high-quality residential, commercial, and industrial construction solutions with precision, trust, and engineering excellence.
-          </p>
-
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <motion.a
+          {/* CTA Buttons */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={loaded ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.9, ease: "easeOut" }}
+            className="flex flex-col sm:flex-row gap-4"
+          >
+            <a
               href="#contact"
               data-testid="hero-start-project-btn"
-              whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(200,169,107,0.35)" }}
-              whileTap={{ scale: 0.97 }}
-              className="bg-[#C8A96B] text-[#001F3F] px-8 py-4 font-semibold rounded-lg text-sm uppercase tracking-widest hover:bg-[#b8974f] transition-colors duration-300 w-full sm:w-auto"
+              className="group inline-flex items-center justify-center font-inter font-bold text-[#001F3F] uppercase bg-[#C8A96B] hover:bg-white transition-all duration-300"
+              style={{
+                padding: "18px 40px",
+                fontSize: "14px",
+                letterSpacing: "1.5px",
+                borderRadius: 0,
+                boxShadow: "0 8px 30px rgba(200,169,107,0.4)",
+              }}
             >
               Start Your Project
-            </motion.a>
-            <motion.a
+              <span className="ml-2 inline-block group-hover:translate-x-1 transition-transform duration-200">
+                →
+              </span>
+            </a>
+
+            <a
               href="#portfolio"
               data-testid="hero-view-portfolio-btn"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.97 }}
-              className="border-2 border-[#C8A96B] text-white px-8 py-4 font-semibold rounded-lg text-sm uppercase tracking-widest hover:bg-[#C8A96B] hover:text-[#001F3F] transition-all duration-300 w-full sm:w-auto"
+              className="inline-flex items-center justify-center font-inter font-medium text-white uppercase hover:text-[#C8A96B] transition-all duration-300"
+              style={{
+                padding: "18px 40px",
+                fontSize: "14px",
+                letterSpacing: "1.5px",
+                border: "1.5px solid rgba(255,255,255,0.5)",
+                borderRadius: 0,
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.borderColor = "#C8A96B")}
+              onMouseLeave={(e) => (e.currentTarget.style.borderColor = "rgba(255,255,255,0.5)")}
             >
               View Portfolio
-            </motion.a>
-          </div>
-        </motion.div>
+            </a>
+          </motion.div>
+        </div>
       </div>
 
-      {/* Trust line */}
-      <motion.p
+      {/* ── Bottom left stat blocks ── */}
+      <motion.div
         initial={{ opacity: 0 }}
         animate={loaded ? { opacity: 1 } : {}}
-        transition={{ duration: 1, delay: 1.2 }}
-        data-testid="hero-trust-line"
-        className="absolute bottom-20 left-1/2 -translate-x-1/2 text-white/45 text-xs sm:text-sm font-inter text-center w-full px-4"
+        transition={{ duration: 0.6, delay: 1.1, ease: "easeOut" }}
+        data-testid="hero-stat-blocks"
+        className="absolute bottom-10 left-6 sm:left-10 lg:left-24 z-[2] hidden sm:flex items-center gap-10"
+        style={{ borderTop: "1px solid rgba(255,255,255,0.18)", paddingTop: "20px" }}
       >
-        Serving clients with excellence since 2009 &nbsp;|&nbsp; Bengaluru, India
-      </motion.p>
+        {[
+          { number: "50+", label: "Projects Done" },
+          { number: "10+", label: "Years Active" },
+        ].map((stat, i) => (
+          <div key={stat.label} className="flex items-center gap-10">
+            {i > 0 && (
+              <div
+                style={{
+                  width: "1px",
+                  height: "40px",
+                  background: "rgba(255,255,255,0.2)",
+                  marginRight: "-20px",
+                }}
+              />
+            )}
+            <div>
+              <div
+                className="font-sora font-bold text-[#C8A96B]"
+                style={{ fontSize: "28px", lineHeight: 1 }}
+              >
+                {stat.number}
+              </div>
+              <div
+                className="font-inter text-white/60 uppercase mt-1"
+                style={{ fontSize: "11px", letterSpacing: "1px" }}
+              >
+                {stat.label}
+              </div>
+            </div>
+          </div>
+        ))}
+      </motion.div>
 
-      {/* Slide indicators */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex gap-2">
+      {/* ── Dot slide indicators ── */}
+      <div
+        className="absolute z-[2] flex items-center gap-2"
+        style={{ bottom: "80px", left: "50%", transform: "translateX(-50%)" }}
+      >
         {heroImages.map((_, i) => (
           <button
             key={i}
             data-testid={`hero-indicator-${i}`}
             onClick={() => setCurrent(i)}
-            className={`h-1 rounded-full transition-all duration-500 ${
-              i === current ? "w-8 bg-[#C8A96B]" : "w-3 bg-white/30"
-            }`}
             aria-label={`Slide ${i + 1}`}
+            style={{
+              width: i === current ? "28px" : "8px",
+              height: "8px",
+              borderRadius: "999px",
+              background: "#C8A96B",
+              opacity: i === current ? 1 : 0.4,
+              transition: "width 300ms ease, opacity 300ms ease",
+              border: "none",
+              cursor: "pointer",
+              padding: 0,
+            }}
           />
         ))}
       </div>
 
-      {/* Scroll indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={loaded ? { opacity: 1 } : {}}
-        transition={{ duration: 1, delay: 1.5 }}
-        className="absolute bottom-3 left-1/2 -translate-x-1/2"
-      >
-        <motion.div animate={{ y: [0, 8, 0] }} transition={{ duration: 1.6, repeat: Infinity }}>
-          <ChevronDown size={22} color="rgba(200,169,107,0.7)" strokeWidth={1.5} />
-        </motion.div>
-      </motion.div>
+      {/* ── Scroll indicator (animated vertical line) ── */}
+      <div className="absolute bottom-8 right-10 z-[2] hidden lg:flex flex-col items-center gap-2">
+        <motion.div
+          animate={{ scaleY: [0.3, 1, 0.3] }}
+          transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+          style={{
+            width: "2px",
+            height: "60px",
+            background: "linear-gradient(to bottom, transparent, #C8A96B)",
+            transformOrigin: "top",
+          }}
+        />
+        <span
+          className="font-inter text-white/50"
+          style={{ fontSize: "10px", letterSpacing: "3px", writingMode: "vertical-lr", marginTop: "4px" }}
+        >
+          SCROLL
+        </span>
+      </div>
     </section>
   );
 }
