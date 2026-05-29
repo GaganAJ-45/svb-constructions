@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ShieldCheck, Award, Building2, Users, CheckCircle, HardHat } from "lucide-react";
+import { ShieldCheck, Award, Building2, CheckCircle, HardHat } from "lucide-react";
 
 const certs = [
   {
@@ -8,19 +8,9 @@ const certs = [
     subtitle: "Government Certified Contractor",
   },
   {
-    icon: ShieldCheck,
-    title: "OHSAS 18001",
-    subtitle: "Occupational Health & Safety",
-  },
-  {
     icon: Award,
     title: "BBMP Approved",
     subtitle: "Bruhat Bengaluru Mahanagara Palike",
-  },
-  {
-    icon: Users,
-    title: "CREDAI Member",
-    subtitle: "Confederation of Real Estate",
   },
   {
     icon: CheckCircle,
@@ -62,7 +52,7 @@ export default function Certifications() {
         </motion.div>
 
         {/* Certs Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-5">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
           {certs.map((cert, i) => {
             const Icon = cert.icon;
             return (

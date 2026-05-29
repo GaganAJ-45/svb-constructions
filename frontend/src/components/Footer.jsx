@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Phone, Mail, Instagram, MessageCircle } from "lucide-react";
 
-const LOGO_URL = "https://customer-assets.emergentagent.com/job_svb-constructions/artifacts/33nhlam1_company_logo.jpeg";
+const LOGO_URL = "https://customer-assets.emergentagent.com/job_svb-constructions/artifacts/awy71t67_company_logo1.jpeg";
 
 const WA_LINK = `https://wa.me/919035911632?text=${encodeURIComponent("Hi, I'm interested in your construction services at SVB Constructions. Can you please provide more details?")}`;
 
@@ -141,7 +141,9 @@ export default function Footer() {
             {/* Social icons */}
             <div className="flex items-center gap-4 mb-5">
               <a
-                href="#"
+                href="https://www.instagram.com/svbrconstructions?igsh=MTlnNXI0Y2JvcXY2bg%3D%3D"
+                target="_blank"
+                rel="noopener noreferrer"
                 data-testid="footer-instagram"
                 className="text-[#94A3B8] hover:text-[#C8A96B] transition-colors hover:scale-110 transform"
                 aria-label="Instagram"

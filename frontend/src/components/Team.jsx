@@ -7,21 +7,21 @@ const team = [
     designation: "Founder & Owner",
     experience: "15+ Years in Civil Engineering",
     bio: "Founded SVB Constructions with a clear vision — to deliver premium quality construction that clients can trust. Leads the company with dedication and engineering precision.",
-    photo: "https://customer-assets.emergentagent.com/job_svb-constructions/artifacts/75pjxo20_Sachin_ph.jpeg",
+    photo: "https://customer-assets.emergentagent.com/job_svb-constructions/artifacts/nytjbq9t_Sachin_ph.jpeg",
     phone: "+91 9035911632",
     email: "svbrconstructions@gmail.com",
-    instagram: "#",
+    instagram: "https://www.instagram.com/sachings_sachin?igsh=aG8ycjE3d21wcG4x",
     whatsapp: `https://wa.me/919035911632?text=${encodeURIComponent("Hi Sachin, I'm interested in starting a construction project with SVB Constructions. Can we connect?")}`,
   },
   {
     name: "Sanjay G S",
     designation: "Managing Director",
-    experience: "12+ Years in Project Management",
+    experience: "6+ Years in Project Management",
     bio: "Manages day-to-day operations and client relationships. Ensures every project is delivered on time, within budget, and to the highest quality standards.",
-    photo: "https://customer-assets.emergentagent.com/job_svb-constructions/artifacts/4bvwov15_sanjay_ph.jpeg",
+    photo: "https://customer-assets.emergentagent.com/job_svb-constructions/artifacts/tri8facc_sanjay_ph1.jpeg",
     phone: "+91 63616 38075",
     email: "svbrconstructions@gmail.com",
-    instagram: "#",
+    instagram: "https://www.instagram.com/sanjukssanjay?igsh=MTltanJiYWY3cnk0eA==",
     whatsapp: `https://wa.me/916361638075?text=${encodeURIComponent("Hi Sanjay, I'm interested in discussing a construction project with SVB Constructions. Can we connect?")}`,
   },
   {
@@ -82,7 +82,7 @@ export default function Team() {
                 <img
                   src={member.photo}
                   alt={member.name}
-                  className="w-full h-full object-cover object-top grayscale group-hover:grayscale-0 transition-all duration-500 scale-100 group-hover:scale-105"
+                  className="w-full h-full object-cover object-top transition-all duration-500 scale-100 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#001F3F]/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
