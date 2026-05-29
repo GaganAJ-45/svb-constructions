@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { MessageCircle, ChevronUp } from "lucide-react";
 
 const WHATSAPP_NUMBER = "919035911632";
+const WHATSAPP_MESSAGE = encodeURIComponent("Hi, I'm interested in your construction services at SVB Constructions. Can you please provide more information about your projects and pricing?");
 
 export default function FloatingButtons() {
   const [showTopBtn, setShowTopBtn] = useState(false);
@@ -57,7 +58,7 @@ export default function FloatingButtons() {
         </AnimatePresence>
 
         <motion.a
-          href={`https://wa.me/${WHATSAPP_NUMBER}`}
+          href={`https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MESSAGE}`}
           target="_blank"
           rel="noopener noreferrer"
           data-testid="floating-whatsapp-btn"

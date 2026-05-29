@@ -11,10 +11,7 @@ const team = [
     phone: "+91 9035911632",
     email: "svbrconstructions@gmail.com",
     instagram: "#",
-    whatsapp: "https://wa.me/919035911632",
-  },
-  {
-    name: "Sanjay K S",
+    whatsapp: `https://wa.me/919035911632?text=${encodeURIComponent("Hi Sachin, I'm interested in starting a construction project with SVB Constructions. Can we connect?")}`,
     designation: "Managing Director",
     experience: "12+ Years in Project Management",
     bio: "Strategic leader overseeing project portfolios, client relationships, and operational excellence. Ensures every project meets the highest standards of quality and timeliness.",
@@ -22,7 +19,7 @@ const team = [
     phone: "+91 63616 38075",
     email: "svbrconstructions@gmail.com",
     instagram: "#",
-    whatsapp: "https://wa.me/916361638075",
+    whatsapp: `https://wa.me/916361638075?text=${encodeURIComponent("Hi Sanjay, I'm interested in discussing a construction project with SVB Constructions. Can we connect?")}`,
   },
   {
     name: "Ravi Kumar M",
@@ -33,7 +30,7 @@ const team = [
     phone: "+91 9035911632",
     email: "svbrconstructions@gmail.com",
     instagram: "#",
-    whatsapp: "https://wa.me/919035911632",
+    whatsapp: `https://wa.me/919035911632?text=${encodeURIComponent("Hi, I'm interested in discussing a construction project with SVB Constructions. Can we connect?")}`,
   },
 ];
 

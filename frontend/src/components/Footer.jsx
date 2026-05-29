@@ -1,8 +1,9 @@
 import { motion } from "framer-motion";
 import { Building2, Phone, Mail, Instagram, MessageCircle } from "lucide-react";
 
+const WA_LINK = `https://wa.me/919035911632?text=${encodeURIComponent("Hi, I'm interested in your construction services at SVB Constructions. Can you please provide more details?")}`;
+
 const services = [
-  "Planning & Design",
   "3D Visualization",
   "Interior Design",
   "Cost Estimation",
@@ -146,7 +147,7 @@ export default function Footer() {
                 <Instagram size={20} strokeWidth={1.5} />
               </a>
               <a
-                href="https://wa.me/919035911632"
+                href={WA_LINK}
                 target="_blank"
                 rel="noopener noreferrer"
                 data-testid="footer-whatsapp"
@@ -159,7 +160,7 @@ export default function Footer() {
 
             {/* WhatsApp CTA button */}
             <a
-              href="https://wa.me/919035911632"
+              href={WA_LINK}
               target="_blank"
               rel="noopener noreferrer"
               data-testid="footer-whatsapp-btn"

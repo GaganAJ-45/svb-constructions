@@ -4,12 +4,12 @@ import { ChevronDown } from "lucide-react";
 
 const heroImages = [
   {
-    url: "https://static.prod-images.emergentagent.com/jobs/31d1f9c1-ff79-4b16-8a6e-c94a65559d9a/images/b6d1d83118d67d554b4c66daf405fb28c6bbc86a45349436ebf94295a1cfa112.png",
-    alt: "Luxury residential construction",
+    url: "https://customer-assets.emergentagent.com/job_svb-constructions/artifacts/542rhen8_Hero_img1.jpg",
+    alt: "Civil engineer at premium construction site with crane",
   },
   {
-    url: "https://static.prod-images.emergentagent.com/jobs/31d1f9c1-ff79-4b16-8a6e-c94a65559d9a/images/35cf3e93206f46f4bbfc04f8593be083f3129d58bece92a19dfb671fd181b453.png",
-    alt: "Premium commercial infrastructure",
+    url: "https://customer-assets.emergentagent.com/job_svb-constructions/artifacts/2zm81vuh_Hero_img2.jpg",
+    alt: "Modern construction with advanced engineering technology",
   },
 ];
 

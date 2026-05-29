@@ -69,8 +69,9 @@
 
 ## What's Been Implemented
 
-### Feb 2026 — Full MVP
+### Feb 2026 — Full MVP + Updates
 - All 14 sections built and styled
+- **Hero images updated** to client's own photos (Hero_img1 & Hero_img2)
 - Hero image slider with Ken Burns effect
 - Portfolio with 6 projects + filter tabs (All/Residential/Commercial/Industrial/Interiors)
 - Portfolio lightbox modal with project details
@@ -81,9 +82,10 @@
 - Team profiles: Sachin G S, Sanjay K S, Ravi Kumar M
 - Certifications: 6 industry badges
 - Process Timeline: 6-step (horizontal desktop, vertical mobile)
+- **WhatsApp pre-filled message** on all WA links (floating button, footer, team cards)
 - Floating WhatsApp button + back-to-top
 - Scroll progress bar at top of page
-- SEO meta tags, page title updated
+- SEO meta tags, page title: "Shree Veerabhadreshwara Constructions | Premium Civil Engineering"
 - Responsive design: desktop/tablet/mobile
 
 ---
