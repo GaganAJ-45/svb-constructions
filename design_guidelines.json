@@ -1,0 +1,140 @@
+{
+  "theme": "LIGHT",
+  "archetype": "5 (Luxury)",
+  "design_philosophy": "High-end architecture studio approach. Emphasizes full-bleed photography, abundant negative space, refined typography, and a strict color palette. Must feel trustworthy, modern, minimal, and extremely premium. No generic yellow-black industrial themes.",
+  "typography": {
+    "headings": {
+      "font_family": "Sora, sans-serif",
+      "weights": ["400", "600", "700"],
+      "styling": "tracking-tight, leading-tight. Never center-align universally; use purposeful alignment."
+    },
+    "body": {
+      "font_family": "Inter, sans-serif",
+      "weights": ["300", "400", "500"],
+      "styling": "leading-relaxed, text-[#94A3B8] for secondary, text-[#0F172A] for primary."
+    },
+    "hierarchy": {
+      "h1": "text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight",
+      "h2": "text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight",
+      "h3": "text-xl sm:text-2xl font-semibold",
+      "body": "text-base sm:text-lg",
+      "overline": "text-sm uppercase tracking-[0.2em] font-medium text-[#C8A96B]"
+    }
+  },
+  "colors": {
+    "primary_background": "#FFFFFF",
+    "primary_dark": "#001F3F",
+    "gold_accent": "#C8A96B",
+    "secondary_soft_background": "#F8FAFC",
+    "text_primary": "#0F172A",
+    "text_secondary": "#94A3B8",
+    "border_color": "#E2E8F0"
+  },
+  "layout_and_spacing": {
+    "container": "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8",
+    "section_padding": "py-24 md:py-32 lg:py-40",
+    "grid_strategy": "Use 'Bento' grid or asymmetric layouts for Services and Portfolio. generous spacing (gap-8 to gap-16) to allow content to breathe.",
+    "alignment": "Optical alignment over geometrical. Left-align dense content for readability."
+  },
+  "components": {
+    "navbar": "Sticky, fixed top-0 w-full z-50. Initial state: transparent text-white. Scrolled state: backdrop-blur-xl bg-white/90 text-[#0F172A] border-b border-[#E2E8F0].",
+    "hero": "min-h-screen relative overflow-hidden. Ken Burns effect on background images (slow scale and pan). Overlay: bg-[#001F3F]/60 for text legibility. Large heading + Gold accent button.",
+    "stats_strip": "bg-[#001F3F] text-white py-16. Use Framer Motion for animated counters. Gold accent for numbers.",
+    "buttons": {
+      "primary": "bg-[#C8A96B] text-white hover:bg-[#b3955a] transition-all duration-300 px-8 py-4 rounded-none text-sm uppercase tracking-wider font-semibold",
+      "secondary": "border border-[#C8A96B] text-[#C8A96B] hover:bg-[#C8A96B] hover:text-white transition-all duration-300 px-8 py-4 rounded-none text-sm uppercase tracking-wider font-semibold",
+      "dark": "bg-[#001F3F] text-white hover:bg-[#001429] transition-all duration-300 px-8 py-4 rounded-none text-sm uppercase tracking-wider font-semibold"
+    },
+    "cards": {
+      "service": "bg-white border border-[#E2E8F0] p-8 hover:-translate-y-2 transition-transform duration-300 group hover:shadow-xl",
+      "team": "bg-[#F8FAFC] overflow-hidden",
+      "testimonial": "bg-white p-8 border border-[#E2E8F0] rounded-lg relative"
+    },
+    "portfolio": "Filter tabs (All, Residential, Commercial). CSS Grid or Masonry for images. Lightbox effect on click.",
+    "process_timeline": "Vertical line with numbered nodes in Gold. Alternating left/right content blocks on desktop.",
+    "contact": "Form integrated with Formspree. Google Map embed adjacent to form. bg-[#F8FAFC].",
+    "footer": "bg-[#001F3F] text-white py-20. Clean typography, WhatsApp floating button fixed to bottom right."
+  },
+  "motion": {
+    "library": "framer-motion",
+    "reveal": "Fade up with y: 30, opacity: 0 to 1, duration 0.6s, ease out.",
+    "stagger": "Stagger children in grids (delay: 0.1s per item).",
+    "ken_burns": "Animate scale from 1 to 1.1 and subtle pan over 5-8 seconds."
+  },
+  "media": {
+    "hero_slider": [
+      {
+        "url": "https://static.prod-images.emergentagent.com/jobs/31d1f9c1-ff79-4b16-8a6e-c94a65559d9a/images/b6d1d83118d67d554b4c66daf405fb28c6bbc86a45349436ebf94295a1cfa112.png",
+        "description": "Premium luxury residential architecture villa at golden hour"
+      },
+      {
+        "url": "https://static.prod-images.emergentagent.com/jobs/31d1f9c1-ff79-4b16-8a6e-c94a65559d9a/images/35cf3e93206f46f4bbfc04f8593be083f3129d58bece92a19dfb671fd181b453.png",
+        "description": "Modern high-end commercial building facade at sunset"
+      }
+    ],
+    "about_us": [
+      {
+        "url": "https://static.prod-images.emergentagent.com/jobs/31d1f9c1-ff79-4b16-8a6e-c94a65559d9a/images/d1fae9d2bef7fd70cb29793060f84086e58b04d32343827ad89f44404fbb7000.png",
+        "description": "Close-up architectural detail of premium construction"
+      }
+    ],
+    "portfolio_and_services": [
+      {
+        "url": "https://images.unsplash.com/photo-1768223933860-6d62bc5b2ff3?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA2ODl8MHwxfHNlYXJjaHwzfHxsdXh1cnklMjBhcmNoaXRlY3R1cmUlMjBleHRlcmlvciUyMGJ1aWxkaW5nfGVufDB8fHx8MTc4MDA2ODA1MHww&ixlib=rb-4.1.0&q=85",
+        "description": "Modern building with glass facade against sky"
+      },
+      {
+        "url": "https://images.pexels.com/photos/28272634/pexels-photo-28272634.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "description": "Neoclassical building facade"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1746364742672-c6383331b032?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxODh8MHwxfHNlYXJjaHwyfHxtb2Rlcm4lMjBjb25zdHJ1Y3Rpb24lMjBjaXZpbCUyMGVuZ2luZWVyaW5nJTIwc2l0ZXxlbnwwfHx8fDE3ODAwNjgwNTB8MA&ixlib=rb-4.1.0&q=85",
+        "description": "Construction cranes populating cityscape"
+      },
+      {
+        "url": "https://images.pexels.com/photos/4170184/pexels-photo-4170184.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+        "description": "Aerial view of active construction site"
+      }
+    ],
+    "team": [
+      {
+        "name": "Sachin G S",
+        "role": "Founder / Owner",
+        "url": "https://images.pexels.com/photos/3776969/pexels-photo-3776969.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      },
+      {
+        "name": "Sanjay K S",
+        "role": "Managing Director",
+        "url": "https://images.pexels.com/photos/6474447/pexels-photo-6474447.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      },
+      {
+        "name": "Senior Civil Engineer",
+        "role": "Engineering Head",
+        "url": "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzNTl8MHwxfHNlYXJjaHwyfHxwcm9mZXNzaW9uYWwlMjBjaXZpbCUyMGVuZ2luZWVyJTIwcG9ydHJhaXQlMjBtYWxlfGVufDB8fHx8MTc4MDA2ODA2N3ww&ixlib=rb-4.1.0&q=85"
+      }
+    ],
+    "testimonials": [
+      {
+        "url": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA3MDB8MHwxfHNlYXJjaHwxfHxoYXBweSUyMGNsaWVudCUyMHBvcnRyYWl0JTIwaGVhZHNob3R8ZW58MHx8fHwxNzgwMDY4MDY4fDA&ixlib=rb-4.1.0&q=85"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA3MDB8MHwxfHNlYXJjaHwzfHxoYXBweSUyMGNsaWVudCUyMHBvcnRyYWl0JTIwaGVhZHNob3R8ZW58MHx8fHwxNzgwMDY4MDY4fDA&ixlib=rb-4.1.0&q=85"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1580489944761-15a19d654956?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA3MDB8MHwxfHNlYXJjaHwyfHxoYXBweSUyMGNsaWVudCUyMHBvcnRyYWl0JTIwaGVhZHNob3R8ZW58MHx8fHwxNzgwMDY4MDY4fDA&ixlib=rb-4.1.0&q=85"
+      }
+    ]
+  },
+  "instructions_to_main_agent": [
+    "Ensure global CSS imports Google Fonts: Sora (400,600,700) and Inter (300,400,500).",
+    "Tailwind Config MUST be extended to map 'sora' and 'inter' fonts, and the specific color palette (primary, dark, gold, etc.).",
+    "Build a smooth scroll experience for the single-page layout (using react-scroll or native smooth scroll behavior).",
+    "Hero Section MUST include an auto-changing background image slider using the provided hero_slider media, with Framer Motion for the slow Ken Burns scaling effect.",
+    "Navbar must switch styles dynamically based on window.scrollY (from transparent/white text to white backdrop-blur/dark text).",
+    "Use lucide-react for all icons, setting strokeWidth={1.5} for a thin, elegant, premium look.",
+    "Testimonial section must be an auto-rotating carousel (use Swiper or Embla Carousel).",
+    "Add floating WhatsApp and back-to-top buttons in the bottom right, with high z-index.",
+    "Formspree action URL can be a placeholder or environment variable, but form must be fully styled.",
+    "Every interactive or informational element MUST include a data-testid attribute in kebab-case."
+  ]
+}
