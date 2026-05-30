@@ -26,7 +26,7 @@ const anim = (delay) => ({
 });
 
 const bilingualLines = [
-  { text: "ನಿಮ್ಮ ಕನಸಿಗೆ ನಾವು ಬಲವಾದ ಅಡಿಪಾಯ", lang: "kannada" },
+  { text: "ನಿಮ್ಮ ಕನಸಿನ ಮನೆ, ನಮ್ಮ ಜವಾಬ್ದಾರಿ", lang: "kannada" },
   { text: "Building Dreams, Engineering Excellence", lang: "english" },
 ];
 
@@ -98,14 +98,15 @@ export default function Hero() {
       />
 
       {/* ── Hero content (LEFT-ALIGNED) ── */}
-      <div className="relative z-[2] w-full max-w-7xl mx-auto px-6 sm:px-10 lg:pl-24 pt-28 pb-36">
-        <div className="max-w-[720px]">
+      <div className="relative z-[2] w-full max-w-7xl mx-auto px-6 sm:px-10 lg:pl-24">
+        <div className="max-w-[640px]">
 
-          {/* Eyebrow: [line] Est. 2025 · Shivamogga, Karnataka */}
+          {/* Eyebrow */}
           <motion.div
             {...anim(0.1)}
             animate={loaded ? { opacity: 1, y: 0 } : { opacity: 0, y: 28 }}
-            className="flex items-center gap-4 mb-7"
+            className="flex items-center gap-4"
+            style={{ marginBottom: "10px" }}
             data-testid="hero-eyebrow"
           >
             <div className="w-10 h-px bg-[#C8A96B] flex-shrink-0" />
@@ -121,9 +122,8 @@ export default function Hero() {
           <div
             data-testid="hero-bilingual-line"
             style={{
-              minHeight: "40px",
-              marginTop: "20px",
-              marginBottom: "20px",
+              minHeight: "32px",
+              marginBottom: "14px",
               display: "flex",
               alignItems: "center",
             }}
@@ -154,16 +154,17 @@ export default function Hero() {
           </div>
 
           {/* H1 — Two lines */}
-          <div className="mb-6">
+          <div style={{ marginBottom: "14px" }}>
             <motion.h1
               initial={{ opacity: 0, y: 28 }}
               animate={loaded ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
               className="font-sora font-extrabold text-white block"
               style={{
-                fontSize: "clamp(44px, 5.5vw, 82px)",
-                lineHeight: 1.08,
-                letterSpacing: "-1px",
+                fontSize: "clamp(36px, 5.5vw, 56px)",
+                lineHeight: 1.15,
+                letterSpacing: "-0.5px",
+                maxWidth: "640px",
               }}
             >
               Building{" "}
@@ -183,9 +184,10 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
               className="font-sora font-bold text-white block"
               style={{
-                fontSize: "clamp(44px, 5.5vw, 82px)",
-                lineHeight: 1.08,
-                letterSpacing: "-1px",
+                fontSize: "clamp(36px, 5.5vw, 56px)",
+                lineHeight: 1.15,
+                letterSpacing: "-0.5px",
+                maxWidth: "640px",
               }}
             >
               Engineering Tomorrow
@@ -199,11 +201,11 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.7, ease: "easeOut" }}
             className="font-inter font-medium"
             style={{
-              fontSize: "16px",
+              fontSize: "15px",
               letterSpacing: "1px",
               color: "rgba(255,255,255,0.72)",
-              marginBottom: "40px",
-              marginTop: "20px",
+              marginBottom: "24px",
+              marginTop: "14px",
             }}
             data-testid="hero-subtitle"
           >
@@ -265,34 +267,40 @@ export default function Hero() {
         animate={loaded ? { opacity: 1 } : {}}
         transition={{ duration: 0.6, delay: 1.1, ease: "easeOut" }}
         data-testid="hero-stat-blocks"
-        className="absolute bottom-10 left-6 sm:left-10 lg:left-24 z-[2] hidden sm:flex items-center gap-10"
-        style={{ borderTop: "1px solid rgba(255,255,255,0.18)", paddingTop: "20px" }}
+        className="absolute z-[2] hidden sm:flex items-center"
+        style={{
+          bottom: "28px",
+          left: "60px",
+          gap: "36px",
+          borderTop: "1px solid rgba(255,255,255,0.15)",
+          paddingTop: "16px",
+        }}
       >
         {[
           { number: "50+", label: "Projects Done" },
           { number: "10+", label: "Years Active" },
         ].map((stat, i) => (
-          <div key={stat.label} className="flex items-center gap-10">
+          <div key={stat.label} className="flex items-center" style={{ gap: "36px" }}>
             {i > 0 && (
               <div
                 style={{
                   width: "1px",
-                  height: "40px",
-                  background: "rgba(255,255,255,0.2)",
-                  marginRight: "-20px",
+                  height: "36px",
+                  background: "rgba(255,255,255,0.15)",
+                  marginRight: "-18px",
                 }}
               />
             )}
             <div>
               <div
                 className="font-sora font-bold text-[#C8A96B]"
-                style={{ fontSize: "28px", lineHeight: 1 }}
+                style={{ fontSize: "22px", lineHeight: 1 }}
               >
                 {stat.number}
               </div>
               <div
-                className="font-inter text-white/60 uppercase mt-1"
-                style={{ fontSize: "11px", letterSpacing: "1px" }}
+                className="font-inter text-white/55 uppercase mt-1"
+                style={{ fontSize: "10px", letterSpacing: "1.5px" }}
               >
                 {stat.label}
               </div>
