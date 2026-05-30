@@ -25,14 +25,32 @@ const anim = (delay) => ({
   transition: { duration: 0.6, delay, ease: "easeOut" },
 });
 
+const bilingualLines = [
+  { text: "ನಿಮ್ಮ ಕನಸಿಗೆ ನಾವು ಬಲವಾದ ಅಡಿಪಾಯ", lang: "kannada" },
+  { text: "Building Dreams, Engineering Excellence", lang: "english" },
+];
+
 export default function Hero() {
   const [current, setCurrent] = useState(0);
   const [loaded, setLoaded] = useState(false);
+  const [currentLine, setCurrentLine] = useState(0);
+  const [lineVisible, setLineVisible] = useState(true);
 
   useEffect(() => {
     setLoaded(true);
     const t = setInterval(() => setCurrent((p) => (p + 1) % heroImages.length), 5000);
     return () => clearInterval(t);
+  }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setLineVisible(false);
+      setTimeout(() => {
+        setCurrentLine((prev) => (prev + 1) % bilingualLines.length);
+        setLineVisible(true);
+      }, 800);
+    }, 5000);
+    return () => clearInterval(interval);
   }, []);
 
   return (
@@ -98,6 +116,42 @@ export default function Hero() {
               Est. 2025 · Shivamogga, Karnataka
             </span>
           </motion.div>
+
+          {/* ── Bilingual alternating line ── */}
+          <div
+            data-testid="hero-bilingual-line"
+            style={{
+              minHeight: "40px",
+              marginTop: "20px",
+              marginBottom: "20px",
+              display: "flex",
+              alignItems: "center",
+            }}
+          >
+            <span
+              style={{
+                opacity: lineVisible ? 1 : 0,
+                transition: "opacity 0.8s ease-in-out",
+                color: "#C8A96B",
+                letterSpacing: "1.5px",
+                lineHeight: 1.4,
+                maxWidth: "600px",
+                display: "block",
+                fontFamily:
+                  bilingualLines[currentLine].lang === "kannada"
+                    ? "'Noto Sans Kannada', 'Tunga', sans-serif"
+                    : "'Sora', sans-serif",
+                fontSize:
+                  bilingualLines[currentLine].lang === "kannada"
+                    ? "clamp(18px, 2vw, 24px)"
+                    : "clamp(15px, 1.6vw, 20px)",
+                fontWeight: bilingualLines[currentLine].lang === "kannada" ? 600 : 600,
+                fontStyle: bilingualLines[currentLine].lang === "english" ? "italic" : "normal",
+              }}
+            >
+              {bilingualLines[currentLine].text}
+            </span>
+          </div>
 
           {/* H1 — Two lines */}
           <div className="mb-6">
