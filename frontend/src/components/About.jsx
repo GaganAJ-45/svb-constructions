@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Award, Users, Star, ChevronRight } from "lucide-react";
 
-const ABOUT_IMAGE = "https://static.prod-images.emergentagent.com/jobs/31d1f9c1-ff79-4b16-8a6e-c94a65559d9a/images/d1fae9d2bef7fd70cb29793060f84086e58b04d32343827ad89f44404fbb7000.png";
+const ABOUT_IMAGE = "https://customer-assets.emergentagent.com/job_svb-constructions/artifacts/g3fj5mey_about%20us%20photo.jpg";
 
 const trustBadges = [
   { icon: Award, label: "10+ Years Excellence" },
@@ -17,7 +17,7 @@ export default function About() {
       className="py-24 md:py-32 bg-[#F8FAFC]"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
           {/* Left: Image */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
@@ -29,21 +29,27 @@ export default function About() {
             <div className="relative rounded-xl overflow-hidden shadow-2xl">
               <img
                 src={ABOUT_IMAGE}
-                alt="SVB Constructions - Premium construction quality"
-                className="w-full h-[500px] object-cover"
+                alt="SVB Constructions engineers reviewing construction blueprints"
+                className="w-full object-cover object-center"
+                style={{ height: "clamp(240px, 40vw, 500px)" }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#001F3F]/40 to-transparent" />
             </div>
-            {/* Floating experience badge */}
+            {/* Floating experience badge — inside image on mobile, outside on desktop */}
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.4 }}
-              className="absolute -bottom-6 -right-6 bg-[#C8A96B] text-[#001F3F] p-6 rounded-xl shadow-xl"
+              className="absolute bg-[#C8A96B] text-[#001F3F] rounded-xl shadow-xl"
+              style={{
+                bottom: "clamp(12px, 2vw, -24px)",
+                right: "clamp(12px, 2vw, -24px)",
+                padding: "clamp(14px, 2vw, 24px)",
+              }}
             >
-              <div className="font-sora font-bold text-4xl leading-none">10+</div>
-              <div className="text-xs font-semibold uppercase tracking-wider mt-1">Years of<br />Excellence</div>
+              <div className="font-sora font-bold leading-none" style={{ fontSize: "clamp(24px, 4vw, 40px)" }}>10+</div>
+              <div className="font-semibold uppercase tracking-wider mt-1" style={{ fontSize: "clamp(9px, 1.2vw, 12px)" }}>Years of<br />Excellence</div>
             </motion.div>
           </motion.div>
 
@@ -53,9 +59,10 @@ export default function About() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.1 }}
+            className="mt-8 lg:mt-0"
           >
             <p className="text-[#C8A96B] text-xs font-semibold uppercase tracking-[0.3em] mb-4">About Us</p>
-            <h2 className="font-sora font-bold text-4xl sm:text-5xl text-[#001F3F] leading-tight mb-6">
+            <h2 className="font-sora font-bold text-3xl sm:text-4xl lg:text-5xl text-[#001F3F] leading-tight mb-5">
               Transforming Visions<br />Into Reality
             </h2>
 
