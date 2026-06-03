@@ -63,9 +63,6 @@ export default function About() {
               <p>
                 Shree Veerabhadreshwara Constructions stands as a beacon of engineering excellence in Karnataka. With over a decade of dedicated service, we have built a reputation founded on precision, quality, and unwavering commitment to our clients.
               </p>
-              <p>
-                From initial consultation through final handover, we maintain transparent communication and rigorous quality standards at every stage — because we understand that construction is not just building structures, it's building futures.
-              </p>
             </div>
 
             {/* Mission & Vision */}

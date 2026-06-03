@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
+import StatsStrip from "./components/StatsStrip";
 import Services from "./components/Services";
 import About from "./components/About";
 import WhyChooseUs from "./components/WhyChooseUs";
@@ -38,6 +39,7 @@ function App() {
       <Navbar />
       <main>
         <Hero />
+        <StatsStrip />
         <Services />
         <About />
         <WhyChooseUs />

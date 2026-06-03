@@ -1,68 +1,73 @@
 import { useRef, useState, useEffect } from "react";
 import { motion, useInView } from "framer-motion";
-import { Trophy, CheckSquare, Smile } from "lucide-react";
 
 const stats = [
-  { icon: Trophy, number: 10, suffix: "+", label: "Years Experience", desc: "Civil Construction" },
-  { icon: CheckSquare, number: 50, suffix: "+", label: "Projects Completed", desc: "Across Karnataka" },
-  { icon: Smile, number: 99, suffix: "%", label: "Client Satisfaction", desc: "Proven track record" },
+  { number: 50, suffix: "+", label: "Projects" },
+  { number: 10, suffix: "+", label: "Years Experience" },
+  { number: 100, suffix: "+", label: "Happy Clients" },
 ];
 
-function CounterStat({ stat, delay }) {
-  const ref = useRef(null);
-  const inView = useInView(ref, { once: true });
+function AnimatedCount({ end, suffix, inView }) {
   const [count, setCount] = useState(0);
-
   useEffect(() => {
     if (!inView) return;
-    const duration = 2000;
-    const stepTime = 16;
-    const steps = duration / stepTime;
-    const increment = stat.number / steps;
-    let current = 0;
-    const timer = setInterval(() => {
-      current += increment;
-      if (current >= stat.number) {
-        setCount(stat.number);
-        clearInterval(timer);
-      } else {
-        setCount(Math.floor(current));
-      }
-    }, stepTime);
-    return () => clearInterval(timer);
-  }, [inView, stat.number]);
-
-  const Icon = stat.icon;
-
-  return (
-    <motion.div
-      ref={ref}
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.6, delay }}
-      data-testid={`stat-${stat.label.toLowerCase().replace(/\s+/g, "-")}`}
-      className="flex flex-col items-center text-center py-8 px-6"
-    >
-      <div className="mb-4 p-3 rounded-full bg-[#C8A96B]/10 border border-[#C8A96B]/20">
-        <Icon size={28} color="#C8A96B" strokeWidth={1.5} />
-      </div>
-      <div className="font-sora font-bold text-5xl text-[#C8A96B] leading-none mb-2">
-        {count}{stat.suffix}
-      </div>
-      <div className="text-white font-semibold text-base mb-1">{stat.label}</div>
-      <div className="text-[#94A3B8] text-sm">{stat.desc}</div>
-    </motion.div>
-  );
+    const steps = 60;
+    const increment = end / steps;
+    let cur = 0;
+    const t = setInterval(() => {
+      cur += increment;
+      if (cur >= end) { setCount(end); clearInterval(t); }
+      else setCount(Math.floor(cur));
+    }, 33);
+    return () => clearInterval(t);
+  }, [inView, end]);
+  return <>{count}{suffix}</>;
 }
 
 export default function StatsStrip() {
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, margin: "-60px" });
+
   return (
-    <section data-testid="stats-section" className="bg-[#001F3F] py-4">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-white/10">
+    <section data-testid="stats-section" ref={ref} className="bg-[#001F3F] w-full" style={{ padding: "40px 0" }}>
+      <div className="max-w-4xl mx-auto px-6">
+        <div className="flex flex-col sm:flex-row items-center justify-center">
           {stats.map((stat, i) => (
-            <CounterStat key={stat.label} stat={stat} delay={i * 0.15} />
+            <div key={stat.label} className="flex items-center">
+              {/* Stat block */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={inView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.5, delay: i * 0.15 }}
+                data-testid={`stat-${stat.label.toLowerCase().replace(/\s+/g, "-")}`}
+                className="flex flex-col items-center text-center px-8 py-4"
+              >
+                <div
+                  className="font-sora font-bold text-[#C8A96B]"
+                  style={{ fontSize: "42px", lineHeight: 1 }}
+                >
+                  <AnimatedCount end={stat.number} suffix={stat.suffix} inView={inView} />
+                </div>
+                <div
+                  className="font-inter text-white/70 uppercase mt-2"
+                  style={{ fontSize: "13px", letterSpacing: "1.5px" }}
+                >
+                  {stat.label}
+                </div>
+              </motion.div>
+
+              {/* Divider between stats */}
+              {i < stats.length - 1 && (
+                <div
+                  className="hidden sm:block flex-shrink-0"
+                  style={{
+                    width: "1px",
+                    height: "48px",
+                    background: "rgba(200, 169, 107, 0.3)",
+                  }}
+                />
+              )}
+            </div>
           ))}
         </div>
       </div>

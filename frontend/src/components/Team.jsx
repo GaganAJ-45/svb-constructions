@@ -18,7 +18,7 @@ const team = [
     designation: "Managing Director",
     experience: "6+ Years in Project Management",
     bio: "Manages day-to-day operations and client relationships.",
-    photo: "https://customer-assets.emergentagent.com/job_svb-constructions/artifacts/tri8facc_sanjay_ph1.jpeg",
+    photo: "https://customer-assets.emergentagent.com/job_svb-constructions/artifacts/mm6tls44_sanjay__ph.jpeg",
     phone: "+91 63616 38075",
     email: "svbrconstructions@gmail.com",
     instagram: "https://www.instagram.com/sanjukssanjay?igsh=MTltanJiYWY3cnk0eA==",

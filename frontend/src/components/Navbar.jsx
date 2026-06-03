@@ -7,10 +7,9 @@ const LOGO_URL = "https://customer-assets.emergentagent.com/job_svb-construction
 const navLinks = [
   { label: "Home", href: "#home" },
   { label: "Services", href: "#services" },
-  { label: "Portfolio", href: "#portfolio" },
-  { label: "About", href: "#about" },
-  { label: "Team", href: "#team" },
-  { label: "Certifications", href: "#certifications" },
+  { label: "Projects", href: "#portfolio" },
+  { label: "About Us", href: "#about" },
+  { label: "Why Choose Us", href: "#why-choose-us" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -19,7 +18,7 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 80);
+    const onScroll = () => setScrolled(window.scrollY > 60);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
@@ -30,113 +29,182 @@ export default function Navbar() {
     <>
       <nav
         data-testid="navbar"
-        className={`fixed top-0 w-full z-50 transition-all duration-500 ${
-          scrolled
-            ? "bg-[#001F3F]/95 backdrop-blur-xl shadow-lg"
-            : "bg-transparent"
-        }`}
+        className="fixed top-0 w-full z-50"
+        style={{
+          height: "68px",
+          display: "flex",
+          alignItems: "center",
+          transition: "all 0.4s ease",
+          background: scrolled ? "#0F172A" : "rgba(0, 31, 63, 0.15)",
+          backdropFilter: scrolled ? "none" : "blur(12px)",
+          WebkitBackdropFilter: scrolled ? "none" : "blur(12px)",
+          boxShadow: scrolled ? "0 4px 24px rgba(0,0,0,0.3)" : "none",
+          borderBottom: scrolled ? "none" : "1px solid rgba(200, 169, 107, 0.15)",
+        }}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-20">
-            {/* Logo */}
-            <a href="#home" data-testid="navbar-logo" className="flex items-center gap-3 group">
-              <div className="w-10 h-10 bg-white rounded-sm overflow-hidden flex items-center justify-center transition-transform group-hover:scale-105">
-                <img src={LOGO_URL} alt="SVB Constructions Logo" className="w-full h-full object-contain" />
-              </div>
-              <span className="text-white font-sora font-semibold text-sm leading-tight">SVB Constructions</span>
+        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+          {/* Logo */}
+          <a href="#home" data-testid="navbar-logo" className="flex items-center gap-3 group flex-shrink-0">
+            <div className="w-10 h-10 bg-white rounded-sm overflow-hidden flex-shrink-0 transition-transform group-hover:scale-105">
+              <img src={LOGO_URL} alt="SVB Constructions" className="w-full h-full object-contain" />
+            </div>
+            <span
+              className="text-white font-sora font-semibold hidden sm:block"
+              style={{ fontSize: "14px" }}
+            >
+              SVB Constructions
+            </span>
+          </a>
+
+          {/* Desktop nav links */}
+          <div className="hidden lg:flex items-center gap-7">
+            {navLinks.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                data-testid={`nav-link-${link.label.toLowerCase().replace(/\s+/g, "-")}`}
+                className="relative group py-1"
+                style={{
+                  color: "rgba(255,255,255,0.85)",
+                  fontFamily: "'Sora', sans-serif",
+                  fontWeight: 500,
+                  fontSize: "14px",
+                  letterSpacing: "0.5px",
+                  textDecoration: "none",
+                  transition: "color 0.2s",
+                }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = "#C8A96B")}
+                onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.85)")}
+              >
+                {link.label}
+                <span
+                  className="absolute bottom-0 left-0 w-0 group-hover:w-full"
+                  style={{
+                    height: "2px",
+                    background: "#C8A96B",
+                    transition: "width 0.3s ease",
+                    display: "block",
+                  }}
+                />
+              </a>
+            ))}
+          </div>
+
+          {/* Desktop right: phone + CTA */}
+          <div className="hidden lg:flex items-center gap-4 flex-shrink-0">
+            <a
+              href="tel:+919035911632"
+              data-testid="navbar-phone"
+              className="flex items-center gap-2"
+              style={{
+                color: "white",
+                fontFamily: "'Inter', sans-serif",
+                fontWeight: 500,
+                fontSize: "13px",
+                textDecoration: "none",
+                transition: "color 0.2s",
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = "#C8A96B")}
+              onMouseLeave={(e) => (e.currentTarget.style.color = "white")}
+            >
+              <Phone size={15} color="#C8A96B" strokeWidth={1.5} />
+              +91 90359 11632
             </a>
+            <a
+              href="#contact"
+              data-testid="navbar-get-quote-btn"
+              style={{
+                background: "#C8A96B",
+                color: "#001F3F",
+                fontFamily: "'Sora', sans-serif",
+                fontWeight: 600,
+                fontSize: "13px",
+                letterSpacing: "0.5px",
+                padding: "10px 24px",
+                borderRadius: "6px",
+                textDecoration: "none",
+                transition: "all 0.3s ease",
+                display: "inline-block",
+              }}
+              onMouseEnter={(e) => { e.currentTarget.style.background = "white"; }}
+              onMouseLeave={(e) => { e.currentTarget.style.background = "#C8A96B"; }}
+            >
+              Get Quote
+            </a>
+          </div>
 
-            {/* Desktop Nav */}
-            <div className="hidden lg:flex items-center gap-7">
-              {navLinks.map((link) => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  data-testid={`nav-link-${link.label.toLowerCase()}`}
-                  className="text-white/85 hover:text-[#C8A96B] text-sm font-medium transition-colors duration-200 relative group py-1"
-                >
-                  {link.label}
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#C8A96B] transition-all duration-300 group-hover:w-full" />
-                </a>
-              ))}
-            </div>
-
-            {/* Right side */}
-            <div className="hidden lg:flex items-center gap-5">
-              <a
-                href="tel:+919035911632"
-                data-testid="navbar-phone"
-                className="flex items-center gap-2 text-white/70 hover:text-[#C8A96B] transition-colors duration-200"
-              >
-                <Phone size={15} strokeWidth={1.5} />
-                <span className="text-sm">+91 90359 11632</span>
-              </a>
-              <a
-                href="#contact"
-                data-testid="navbar-get-quote-btn"
-                className="bg-[#C8A96B] text-[#001F3F] px-6 py-2.5 text-sm font-semibold rounded-lg hover:bg-[#b8974f] transition-all duration-300 hover:shadow-lg hover:shadow-[#C8A96B]/30 hover:-translate-y-0.5"
-              >
-                Get Quote
-              </a>
-            </div>
-
-            {/* Mobile hamburger */}
+          {/* Mobile/tablet: phone icon + hamburger */}
+          <div className="flex lg:hidden items-center gap-3">
+            <a
+              href="tel:+919035911632"
+              className="hidden sm:flex text-[#C8A96B]"
+              aria-label="Call us"
+            >
+              <Phone size={18} strokeWidth={1.5} />
+            </a>
             <button
               data-testid="navbar-hamburger"
               onClick={() => setMenuOpen(!menuOpen)}
-              className="lg:hidden text-white p-2 rounded-md hover:bg-white/10 transition-colors"
+              className="text-[#C8A96B] p-1"
               aria-label="Toggle menu"
             >
-              {menuOpen ? <X size={24} strokeWidth={1.5} /> : <Menu size={24} strokeWidth={1.5} />}
+              {menuOpen ? <X size={22} strokeWidth={1.5} /> : <Menu size={22} strokeWidth={1.5} />}
             </button>
           </div>
         </div>
       </nav>
 
-      {/* Mobile full-screen menu */}
+      {/* Mobile fullscreen menu */}
       <AnimatePresence>
         {menuOpen && (
           <motion.div
             data-testid="mobile-menu"
-            initial={{ opacity: 0, x: "100%" }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: "100%" }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="fixed inset-0 z-40 bg-[#001F3F] flex flex-col items-center justify-center"
+            initial={{ opacity: 0, y: -16 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -16 }}
+            transition={{ duration: 0.25 }}
+            className="fixed inset-0 z-40 flex flex-col items-center justify-center"
+            style={{ background: "#0F172A" }}
           >
             <button
               onClick={closeMenu}
-              className="absolute top-6 right-6 text-white p-2"
+              className="absolute top-5 right-5 text-[#C8A96B] p-2"
               aria-label="Close menu"
             >
-              <X size={28} strokeWidth={1.5} />
+              <X size={26} strokeWidth={1.5} />
             </button>
             <div className="flex flex-col items-center gap-8">
               {navLinks.map((link, i) => (
                 <motion.a
                   key={link.label}
                   href={link.href}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 14 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: i * 0.06 }}
                   onClick={closeMenu}
-                  className="text-white text-2xl font-sora font-semibold hover:text-[#C8A96B] transition-colors duration-200"
-                  data-testid={`mobile-nav-${link.label.toLowerCase()}`}
+                  data-testid={`mobile-nav-${link.label.toLowerCase().replace(/\s+/g, "-")}`}
+                  style={{
+                    color: "white",
+                    fontFamily: "'Sora', sans-serif",
+                    fontWeight: 600,
+                    fontSize: "22px",
+                    textDecoration: "none",
+                  }}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = "#C8A96B")}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = "white")}
                 >
                   {link.label}
                 </motion.a>
               ))}
-              <motion.a
-                href="#contact"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: navLinks.length * 0.06 }}
+              <a
+                href="tel:+919035911632"
                 onClick={closeMenu}
-                className="mt-4 bg-[#C8A96B] text-[#001F3F] px-8 py-3 font-semibold rounded-lg text-sm uppercase tracking-wider"
-                data-testid="mobile-get-quote-btn"
+                className="flex items-center gap-2 text-[#C8A96B] mt-4"
+                style={{ fontFamily: "'Inter', sans-serif", fontWeight: 500, fontSize: "15px", textDecoration: "none" }}
               >
-                Get Quote
-              </motion.a>
+                <Phone size={16} strokeWidth={1.5} />
+                +91 90359 11632
+              </a>
             </div>
           </motion.div>
         )}

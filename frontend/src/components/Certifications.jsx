@@ -43,12 +43,9 @@ export default function Certifications() {
           <p className="text-[#C8A96B] text-xs font-semibold uppercase tracking-[0.3em] mb-4">
             Accredited & Trusted
           </p>
-          <h2 className="font-sora font-bold text-4xl sm:text-5xl text-[#001F3F] mb-5">
+          <h2 className="font-sora font-bold text-4xl sm:text-5xl text-[#001F3F] mb-14">
             Certifications & Accreditations
           </h2>
-          <p className="text-[#94A3B8] text-base sm:text-lg max-w-2xl mx-auto">
-            Committed to quality, safety, and industry standards — backed by recognized accreditations.
-          </p>
         </motion.div>
 
         {/* Certs Grid */}

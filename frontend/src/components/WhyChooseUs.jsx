@@ -61,6 +61,7 @@ export default function WhyChooseUs() {
   return (
     <section
       data-testid="why-choose-us-section"
+      id="why-choose-us"
       className="py-24 md:py-32 bg-[#001F3F]"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
