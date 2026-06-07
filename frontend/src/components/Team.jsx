@@ -16,7 +16,7 @@ const team = [
     RoleIcon: Building2,
   },
   {
-    name: "Sanjay G S",
+    name: "Sanjay K S",
     designation: "Managing Director",
     experience: "6+",
     experienceLabel: "Years in Project Management",
