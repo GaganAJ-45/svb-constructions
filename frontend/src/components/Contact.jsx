@@ -23,7 +23,7 @@ const contactInfo = [
     label: "Phone",
     lines: [
       { text: "+91 9035911632 (Sachin G S)", href: "tel:+919035911632" },
-      { text: "+91 63616 38075 (Sanjay G S)", href: "tel:+916361638075" },
+      { text: "+91 63616 38075 (Sanjay K S)", href: "tel:+916361638075" },
     ],
   },
   {
