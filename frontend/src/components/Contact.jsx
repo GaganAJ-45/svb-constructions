@@ -23,7 +23,7 @@ const contactInfo = [
     label: "Phone",
     lines: [
       { text: "+91 9035911632 (Sachin G S)", href: "tel:+919035911632" },
-      { text: "+91 63616 38075 (Sanjay K S)", href: "tel:+916361638075" },
+      { text: "+91 63616 38075 (Sanjay G S)", href: "tel:+916361638075" },
     ],
   },
   {
@@ -34,7 +34,7 @@ const contactInfo = [
   {
     icon: MapPin,
     label: "Address",
-    lines: [{ text: "Gandhi Rd, Nyamati, Karnataka 577223", href: "#" }],
+    lines: [{ text: "4HXF+QR8, Gandhi Rd, Nyamati, Karnataka 577223", href: "https://maps.google.com/maps?q=4HXF%2BQR8+Gandhi+Rd+Nyamati+Karnataka+577223" }],
   },
 ];
 
@@ -125,8 +125,8 @@ export default function Contact() {
             {/* Google Map */}
             <div className="rounded-xl overflow-hidden border border-[#E2E8F0] shadow-sm" data-testid="contact-map">
               <iframe
-                title="SVB Constructions Location"
-                src="https://maps.google.com/maps?q=Nyamati,+Karnataka+577223,+India&output=embed&z=13"
+                title="SVB Constructions Location — 4HXF+QR8, Gandhi Rd, Nyamati"
+                src="https://maps.google.com/maps?q=4HXF%2BQR8+Gandhi+Rd+Nyamati+Karnataka+577223&output=embed&z=16"
                 width="100%"
                 height="300"
                 style={{ border: 0 }}
