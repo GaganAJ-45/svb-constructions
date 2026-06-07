@@ -10,6 +10,7 @@ export const PROJECTS = [
     name: "Luxury Villa",
     category: "residential",
     image: "https://customer-assets.emergentagent.com/job_svb-constructions/artifacts/tys561un_pro1.jpeg",
+    alt: "Luxury villa construction project completed by SVB Constructions in Nyamathi Karnataka",
     location: "Nyamathi, Karnataka",
     year: "2024",
     type: "Residential Villa",

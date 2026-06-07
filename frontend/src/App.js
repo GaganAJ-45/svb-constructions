@@ -36,7 +36,9 @@ function App() {
         className="scroll-progress"
         style={{ width: `${scrollProgress}%` }}
       />
-      <Navbar />
+      <header>
+        <Navbar />
+      </header>
       <main>
         <Hero />
         <StatsStrip />
@@ -50,7 +52,9 @@ function App() {
         <Testimonials />
         <Contact />
       </main>
-      <Footer />
+      <footer>
+        <Footer />
+      </footer>
       <FloatingButtons />
     </div>
   );

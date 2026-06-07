@@ -80,7 +80,7 @@ export default function WhyChooseUs() {
             Why Choose Us
           </h2>
           <p className="text-[#94A3B8] text-base sm:text-lg max-w-2xl mx-auto">
-            Built on trust, innovation, quality, and deep engineering expertise — delivered every single time.
+            Looking for the best construction company in Nyamathi? SVB Constructions is built on trust, innovation, quality, and deep engineering expertise — proudly serving Nyamathi, Honnali, Shivamogga and Davanagere.
           </p>
         </motion.div>
 

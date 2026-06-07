@@ -4,17 +4,17 @@ import { motion } from "framer-motion";
 const heroImages = [
   {
     url: "https://customer-assets.emergentagent.com/job_svb-constructions/artifacts/2n1egh9y_Hero_img1.jpg",
-    alt: "Civil engineer surveying premium construction site",
+    alt: "Construction site with crane in Nyamathi Karnataka — SVB Constructions",
     loading: "eager",
   },
   {
     url: "https://customer-assets.emergentagent.com/job_svb-constructions/artifacts/onqxnj66_Hero_img2.jpg",
-    alt: "Modern construction with advanced engineering technology",
+    alt: "Commercial building construction project by SVB Constructions Shivamogga",
     loading: "lazy",
   },
   {
     url: "https://customer-assets.emergentagent.com/job_svb-constructions/artifacts/ye8vzajl_Hero_img3.jpeg",
-    alt: "Premium residential construction project",
+    alt: "Completed luxury residential villa by SVB Constructions Nyamathi Karnataka",
     loading: "lazy",
   },
 ];

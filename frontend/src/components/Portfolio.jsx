@@ -27,7 +27,7 @@ function ProjectCard({ project, large, onView }) {
       {/* Image */}
       <img
         src={project.image}
-        alt={project.name}
+        alt={project.alt || `${project.name} — ${project.category} project by SVB Constructions in ${project.location}`}
         loading={project.id <= 3 ? "eager" : "lazy"}
         className="w-full h-full object-cover"
         style={{

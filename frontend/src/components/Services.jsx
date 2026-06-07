@@ -63,7 +63,7 @@ export default function Services() {
             Our Core Services
           </h2>
           <p className="text-[#94A3B8] text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
-            Comprehensive construction solutions from concept to completion, tailored to meet your unique needs.
+            SVB Constructions offers comprehensive civil engineering and construction services in Nyamathi, Karnataka — from residential construction and commercial projects to 3D elevation design and interior design.
           </p>
         </motion.div>
 
@@ -88,7 +88,7 @@ export default function Services() {
                 <div className="relative overflow-hidden rounded-t-xl -mx-8 -mt-8 mb-6 h-40">
                   <img
                     src={svc.image}
-                    alt={svc.title}
+                    alt={`${svc.title} service — Shree Veerabhadreshwara Constructions Nyamathi`}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     loading="lazy"
                   />

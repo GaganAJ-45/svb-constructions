@@ -46,7 +46,7 @@ export default function Navbar() {
           {/* Logo */}
           <a href="#home" data-testid="navbar-logo" className="flex items-center gap-3 group flex-shrink-0">
             <div className="w-10 h-10 bg-white rounded-sm overflow-hidden flex-shrink-0 transition-transform group-hover:scale-105">
-              <img src={LOGO_URL} alt="SVB Constructions" className="w-full h-full object-contain" />
+              <img src={LOGO_URL} alt="Shree Veerabhadreshwara Constructions logo" className="w-full h-full object-contain" />
             </div>
             <span
               className="text-white font-sora font-semibold hidden sm:block"

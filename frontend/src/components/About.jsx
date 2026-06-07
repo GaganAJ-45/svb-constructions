@@ -29,7 +29,7 @@ export default function About() {
             <div className="relative rounded-xl overflow-hidden shadow-2xl">
               <img
                 src={ABOUT_IMAGE}
-                alt="SVB Constructions engineers reviewing construction blueprints"
+                alt="SVB Constructions engineering team reviewing project plans at construction site in Nyamathi Karnataka"
                 className="w-full object-cover object-center"
                 style={{ height: "clamp(240px, 40vw, 500px)" }}
               />
@@ -68,7 +68,7 @@ export default function About() {
 
             <div className="space-y-4 text-[#0F172A] text-base leading-relaxed mb-8">
               <p>
-                Shree Veerabhadreshwara Constructions stands as a beacon of engineering excellence in Karnataka. With over a decade of dedicated service, we have built a reputation founded on precision, quality, and unwavering commitment to our clients.
+                Shree Veerabhadreshwara Constructions is a trusted civil engineering and construction company based in Nyamathi, Karnataka. SVB Constructions has delivered 50+ residential, commercial, and civil engineering projects across Nyamathi, Honnali, Shivamogga and Davanagere — built on a foundation of precision, quality, and unwavering commitment to our clients.
               </p>
             </div>
 

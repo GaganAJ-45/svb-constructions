@@ -7,7 +7,7 @@ const team = [
     designation: "Founder & Owner",
     experience: "12+",
     experienceLabel: "Years in Civil Engineering",
-    bio: "Founded SVB Constructions with a vision to deliver quality construction, trusted workmanship, and lasting client relationships.",
+    bio: "Sachin G S is the founder of Shree Veerabhadreshwara Constructions. A skilled civil engineer based in Nyamathi, Sachin G S leads all major construction projects at SVB Constructions with over 12 years of experience.",
     photo: "https://customer-assets.emergentagent.com/job_svb-constructions/artifacts/bei7zg1p_Sachin_ph1.jpeg",
     photoPosition: "object-center object-top",
     email: "svbrconstructions@gmail.com",
@@ -20,7 +20,7 @@ const team = [
     designation: "Managing Director",
     experience: "6+",
     experienceLabel: "Years in Project Management",
-    bio: "Leads daily operations, project coordination, and client engagement to ensure efficient execution and successful project delivery.",
+    bio: "Sanjay K S serves as Director at SVB Constructions, Nyamathi. With deep expertise in civil engineering and project management, Sanjay K S oversees quality standards across all projects in Nyamathi, Honnali and Shivamogga.",
     photo: "https://customer-assets.emergentagent.com/job_svb-constructions/artifacts/1rfzj31a_sanjay__ph.jpeg",
     photoPosition: "object-center",
     email: "svbrconstructions@gmail.com",
@@ -33,7 +33,7 @@ const team = [
     designation: "Senior Civil Engineer",
     experience: "25+",
     experienceLabel: "Years in Structural Design",
-    bio: "Oversees structural planning, engineering design, quality control, and technical excellence across all construction projects.",
+    bio: "Panchappa A G is the senior civil engineer at Shree Veerabhadreshwara Constructions, with 25+ years of structural design expertise across Nyamathi, Karnataka. Panchappa A G oversees technical quality across all SVB Constructions projects.",
     photo: "https://customer-assets.emergentagent.com/job_svb-constructions/artifacts/cy66842n_Panchappa%20A%20G.jpeg",
     photoPosition: "object-top object-center",
     email: "svbrconstructions@gmail.com",
@@ -118,7 +118,7 @@ export default function Team() {
                 <div className="relative bg-[#F1F5F9] overflow-hidden" style={{ height: "300px" }}>
                   <img
                     src={member.photo}
-                    alt={`${member.name} - ${member.designation}`}
+                    alt={`${member.name} - ${member.designation}, Shree Veerabhadreshwara Constructions`}
                     className={`w-full h-full object-cover ${member.photoPosition} transition-transform duration-500 group-hover:scale-105`}
                     loading="lazy"
                   />
