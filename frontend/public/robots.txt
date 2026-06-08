@@ -3,4 +3,4 @@ Allow: /
 Disallow: /admin/
 Disallow: /api/
 
-Sitemap: https://svb-constructions.preview.emergentagent.com/sitemap.xml
+Sitemap: __SITE_URL__/sitemap.xml

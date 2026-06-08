@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
 import { Phone, Mail, Instagram, MessageCircle } from "lucide-react";
 
-const LOGO_URL = "https://customer-assets.emergentagent.com/job_svb-constructions/artifacts/awy71t67_company_logo1.jpeg";
+const LOGO_URL =
+  "https://customer-assets.emergentagent.com/job_svb-constructions/artifacts/awy71t67_company_logo1.jpeg";
 
 const WA_LINK = `https://wa.me/919035911632?text=${encodeURIComponent("Hi, I'm interested in your construction services at SVB Constructions. Can you please provide more details?")}`;
 
@@ -27,31 +28,24 @@ export default function Footer() {
     <footer data-testid="footer" className="bg-[#001F3F] text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
-          {/* Column 1: Brand */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <a href="#home" className="flex items-center gap-3 mb-5 group">
-              <div className="w-12 h-12 bg-white rounded-sm overflow-hidden flex items-center justify-center">
-                <img src={LOGO_URL} alt="SVB Constructions Logo" className="w-full h-full object-contain" />
-              </div>
-              <div className="flex flex-col">
-                <span className="font-sora font-semibold text-sm leading-tight">SVB Constructions</span>
-                <span className="text-[#C8A96B] text-[11px] leading-tight">Premium Civil Engineering</span>
-              </div>
-            </a>
+            <h4 className="font-sora font-bold text-lg text-white mb-4">
+              Shree Veerabhadreshwara Constructions
+            </h4>
             <p className="text-[#94A3B8] text-sm leading-relaxed mb-5">
-              Shree Veerabhadreshwara Constructions — delivering premium civil engineering and construction solutions across Karnataka since 2009.
+              civil engineering and construction solutions across Karnataka since
+              2025.
             </p>
             <p className="text-[#C8A96B] text-xs uppercase tracking-widest font-medium">
-              Bengaluru, Karnataka, India
+              Shivamogga, Karnataka, India
             </p>
           </motion.div>
 
-          {/* Column 2: Services */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -76,7 +70,6 @@ export default function Footer() {
             </ul>
           </motion.div>
 
-          {/* Column 3: Company */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -101,7 +94,6 @@ export default function Footer() {
             </ul>
           </motion.div>
 
-          {/* Column 4: Contact */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -138,7 +130,6 @@ export default function Footer() {
               </a>
             </div>
 
-            {/* Social icons */}
             <div className="flex items-center gap-4 mb-5">
               <a
                 href="https://www.instagram.com/svbrconstructions?igsh=MTlnNXI0Y2JvcXY2bg%3D%3D"
@@ -162,7 +153,6 @@ export default function Footer() {
               </a>
             </div>
 
-            {/* WhatsApp CTA button */}
             <a
               href={WA_LINK}
               target="_blank"
@@ -176,14 +166,13 @@ export default function Footer() {
           </motion.div>
         </div>
 
-        {/* Bottom bar */}
         <div className="border-t border-[#C8A96B]/15 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-[#94A3B8] text-xs text-center sm:text-left">
-            &copy; {new Date().getFullYear()} Shree Veerabhadreshwara Constructions. All rights reserved.
+            &copy; {new Date().getFullYear()} Shree Veerabhadreshwara
+            Constructions. All rights reserved.
           </p>
           <p className="text-[#94A3B8] text-xs">
-            Built with{" "}
-            <span className="text-[#C8A96B]">engineering precision</span>
+            Built with <span className="text-[#C8A96B]">engineering precision</span>
           </p>
         </div>
       </div>

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Instagram, MessageCircle, Mail, Building2, Briefcase, HardHat } from "lucide-react";
+import { Building2, Briefcase, HardHat } from "lucide-react";
 
 const team = [
   {
@@ -161,37 +161,6 @@ export default function Team() {
                     {member.bio}
                   </p>
 
-                  {/* Social links */}
-                  <div className="flex items-center gap-4 pt-5 mt-5 border-t border-[#E2E8F0]">
-                    <a
-                      href={member.instagram}
-                      target={member.instagram !== "#" ? "_blank" : undefined}
-                      rel="noopener noreferrer"
-                      data-testid={`team-instagram-${i}`}
-                      aria-label="Instagram"
-                      className="text-[#94A3B8] hover:text-[#C8A96B] transition-colors duration-200 hover:scale-110 transform"
-                    >
-                      <Instagram size={17} strokeWidth={1.5} />
-                    </a>
-                    <a
-                      href={member.whatsapp}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      data-testid={`team-whatsapp-${i}`}
-                      aria-label="WhatsApp"
-                      className="text-[#94A3B8] hover:text-[#25D366] transition-colors duration-200 hover:scale-110 transform"
-                    >
-                      <MessageCircle size={17} strokeWidth={1.5} />
-                    </a>
-                    <a
-                      href={`mailto:${member.email}`}
-                      data-testid={`team-email-${i}`}
-                      aria-label="Email"
-                      className="text-[#94A3B8] hover:text-[#C8A96B] transition-colors duration-200 hover:scale-110 transform"
-                    >
-                      <Mail size={17} strokeWidth={1.5} />
-                    </a>
-                  </div>
                 </div>
               </motion.div>
             );

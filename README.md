@@ -1,310 +1,474 @@
 # SVB Constructions Website
 
-A modern, responsive civil construction company website developed for **Shree Veerabhadreshwara Constructions (SVB Constructions)**, showcasing company services, project portfolio, leadership team, certifications, and contact information.
+Production-ready marketing website for **Shree Veerabhadreshwara Constructions (SVB Constructions)**. The project is a React single-page site for services, portfolio, team, certifications, testimonials, and contact lead capture, with an optional FastAPI backend kept in the repository for future API use.
 
----
+## Project Overview
 
-## Overview
+- Frontend-first deployment target for GitHub -> Vercel
+- Built as a single-page React application with section-based navigation
+- Contact form currently submits directly to Formspree
+- Backend is optional for current website operation and is not required for the Vercel frontend deployment
 
-The SVB Constructions website is a premium single-page application built to represent a professional civil engineering firm. It features cinematic hero animations, bilingual (Kannada/English) content, an interactive project portfolio, leadership profiles, and a fully integrated contact form — all designed to build trust and generate leads.
-
-**Live Site:** https://svb-constructions.preview.emergentagent.com
-
----
-
-## Tech Stack
+## Technology Stack
 
 ### Frontend
-| Technology | Version | Purpose |
-|---|---|---|
-| React | 19.0.0 | UI framework |
-| Tailwind CSS | 3.4.17 | Utility-first styling |
-| Framer Motion | 11.18.0 | Animations & transitions |
-| Lucide React | 0.516.0 | Icon library |
-| React Hook Form | 7.56.2 | Form state management |
-| Zod | 3.24.4 | Form validation schema |
-| Embla Carousel | 8.6.0 | Testimonials carousel |
-
-### UI Components
-| Library | Purpose |
-|---|---|
-| Shadcn UI (Radix UI) | Accessible component primitives |
-| Sonner | Toast notifications |
-| Tailwind CSS Animate | CSS animation utilities |
-
-### Fonts (Google Fonts)
-- **Sora** — Headings (weights: 400, 600, 700)
-- **Inter** — Body text (weights: 300, 400, 500, 600)
-- **Noto Sans Kannada** — Kannada bilingual text (weights: 400, 600)
+- React 19
+- CRACO + Create React App
+- Tailwind CSS
+- Framer Motion
+- Lucide React
+- React Hook Form + Zod
 
 ### Backend
-| Technology | Version | Purpose |
-|---|---|---|
-| FastAPI | Latest | REST API backend |
-| MongoDB | Local | Database (via PyMongo) |
-| Python | 3.10+ | Backend runtime |
-
-### Build & Dev Tools
-| Tool | Purpose |
-|---|---|
-| CRACO | Create React App config override |
-| Webpack | Module bundler (via CRA) |
-| PostCSS | CSS processing |
-| ESLint | Code linting |
+- FastAPI
+- Motor / MongoDB
+- Python 3.10+
 
 ### Integrations
-- **Formspree** (`mwvzzvde`) — Contact form submissions
-- **Google Maps Embed** — Office location display
-- **WhatsApp Deep Link** — Pre-filled inquiry messages
+- Formspree for contact form submission
+- Google Maps Embed for office location
+- WhatsApp deep links
 
----
+## Repository Structure
 
-## Installation
-
-### Prerequisites
-- Node.js 18+
-- Yarn package manager
-- Python 3.10+ (for backend)
-
-### Frontend Setup
-
-```bash
-# Navigate to frontend directory
-cd frontend
-
-# Install dependencies
-yarn install
-
-# Start development server (runs on port 3000)
-yarn start
+```text
+SVB-Constructions/
+|-- backend/
+|   |-- .env.example
+|   |-- requirements.txt
+|   `-- server.py
+|-- frontend/
+|   |-- .env.example
+|   |-- public/
+|   |   |-- index.html
+|   |   |-- robots.txt
+|   |   `-- sitemap.xml
+|   |-- scripts/
+|   |   `-- prepare-seo-assets.js
+|   |-- src/
+|   |   |-- components/
+|   |   |-- data/
+|   |   |-- App.css
+|   |   |-- App.js
+|   |   `-- index.css
+|   |-- craco.config.js
+|   |-- package-lock.json
+|   `-- package.json
+|-- memory/
+|-- tests/
+|-- test_reports/
+|-- .gitignore
+`-- README.md
 ```
 
-### Backend Setup
+## Local Development
+
+### Prerequisites
+
+- Node.js 18 or newer
+- npm 9 or newer
+- Python 3.10 or newer, only if you want to run the backend
+
+### Frontend Installation
 
 ```bash
-# Navigate to backend directory
+cd frontend
+npm install
+```
+
+### Frontend Development Server
+
+```bash
+cd frontend
+npm start
+```
+
+Default local URL:
+
+```bash
+http://localhost:3000
+```
+
+### Backend Installation
+
+The backend is optional for the current website.
+
+```bash
 cd backend
-
-# Create virtual environment
 python -m venv venv
-source venv/bin/activate  # Windows: venv\Scripts\activate
-
-# Install dependencies
+venv\Scripts\activate
 pip install -r requirements.txt
+```
 
-# Start backend server (runs on port 8001)
+### Backend Development Server
+
+```bash
+cd backend
 uvicorn server:app --host 0.0.0.0 --port 8001 --reload
 ```
 
-### Environment Variables
+## Environment Variables
 
-**Frontend** (`frontend/.env`):
-```
-REACT_APP_BACKEND_URL=https://svb-constructions.preview.emergentagent.com
-WDS_SOCKET_PORT=443
+### Frontend
+
+Create `frontend/.env` from `frontend/.env.example` when needed.
+
+```env
+REACT_APP_SITE_URL=https://your-domain.com
+ENABLE_HEALTH_CHECK=false
 ```
 
-**Backend** (`backend/.env`):
-```
+Notes:
+
+- `REACT_APP_SITE_URL` is used during production build post-processing to stamp the correct canonical URL, sitemap URL, Open Graph URL, and robots sitemap URL.
+- `ENABLE_HEALTH_CHECK` is optional and only used for the custom local health-check plugin.
+
+### Backend
+
+Create `backend/.env` from `backend/.env.example` if you plan to run the API.
+
+```env
 MONGO_URL=mongodb://localhost:27017
 DB_NAME=test_database
 CORS_ORIGINS=*
 ```
 
----
+## Build Commands
 
-## Build
+### Frontend Production Build
 
 ```bash
-# Production build
 cd frontend
-yarn build
-
-# Preview production build locally
-npx serve -s build
+npm run build
 ```
 
-Output is generated in `frontend/build/`.
+Build output directory:
 
----
-
-## Project Structure
-
-```
-svb-constructions/
-├── frontend/
-│   ├── public/
-│   │   └── index.html              # HTML entry point
-│   ├── src/
-│   │   ├── components/
-│   │   │   ├── Navbar.jsx          # Sticky navbar (glassmorphism → solid on scroll)
-│   │   │   ├── Hero.jsx            # Cinematic hero with 3-image crossfade slider
-│   │   │   ├── StatsStrip.jsx      # Animated stats counter strip
-│   │   │   ├── Services.jsx        # 6 service cards with AI-generated images
-│   │   │   ├── About.jsx           # About section with photo + mission/vision
-│   │   │   ├── WhyChooseUs.jsx     # 4 glassmorphism cards on dark navy
-│   │   │   ├── Team.jsx            # Leadership team with premium card design
-│   │   │   ├── Certifications.jsx  # Certification/accreditation badges
-│   │   │   ├── Portfolio.jsx       # Masonry project grid + modal + filters
-│   │   │   ├── ProcessTimeline.jsx # 6-step construction process timeline
-│   │   │   ├── Testimonials.jsx    # Auto-rotating testimonials carousel
-│   │   │   ├── Contact.jsx         # Formspree form + Google Maps embed
-│   │   │   ├── Footer.jsx          # 4-column footer with WhatsApp CTA
-│   │   │   ├── FloatingButtons.jsx # Floating WhatsApp + back-to-top buttons
-│   │   │   └── ui/                 # Shadcn UI components (button, input, etc.)
-│   │   ├── data/
-│   │   │   └── projects.js         # Project portfolio data (easy to update)
-│   │   ├── App.js                  # Root component — assembles all sections
-│   │   ├── App.css                 # Global animation keyframes
-│   │   └── index.css               # Tailwind base + Google Fonts import
-│   ├── package.json
-│   ├── tailwind.config.js          # Brand colors + Sora/Inter font config
-│   └── .env                        # Frontend environment variables
-│
-├── backend/
-│   ├── server.py                   # FastAPI application
-│   ├── requirements.txt            # Python dependencies
-│   └── .env                        # Backend environment variables
-│
-├── memory/
-│   └── PRD.md                      # Product Requirements Document
-│
-└── README.md                       # This file
+```text
+frontend/build
 ```
 
----
+### What the Build Does
 
-## Key Features
+- Compiles the React app with CRACO
+- Emits static files into `frontend/build`
+- Runs `scripts/prepare-seo-assets.js` after build
+- Rewrites SEO files with `REACT_APP_SITE_URL` when that variable is provided
 
-| Feature | Details |
-|---|---|
-| **Hero Slider** | 3-image crossfade slideshow with Ken Burns effect, 5s auto-rotate |
-| **Bilingual Text** | Alternating Kannada/English fade animation (5s each) |
-| **Project Portfolio** | Masonry grid, 5 filter tabs, hover overlay, lightbox modal, Load More |
-| **Leadership Team** | 3 executive profiles with experience badges, real photos, social links |
-| **Contact Form** | Formspree integration, Zod validation, success/error states |
-| **Google Maps** | Pinned to exact location: 4HXF+QR8, Gandhi Rd, Nyamati |
-| **WhatsApp CTA** | Pre-filled message deep links on all WhatsApp buttons |
-| **Animations** | Framer Motion — scroll reveals, stagger, counter animation, modals |
-| **Responsive** | Mobile-first, tested at 320px–1920px |
+## Package and Build Verification
 
----
+Current frontend deployment settings:
 
-## Adding New Portfolio Projects
+- Framework: **Create React App / React**
+- Install command: `npm install`
+- Build command: `npm run build`
+- Output directory: `build`
+- Root directory in Vercel: `frontend`
 
-Open `frontend/src/data/projects.js` and add a new object:
+Current backend deployment status:
 
-```js
-{
-  id: 7,                          // Unique ID
-  name: "Project Name",
-  category: "residential",        // residential | commercial | industrial | interiors
-  image: "https://your-image-url.jpg",
-  location: "Nyamathi, Karnataka",
-  year: "2025",
-  type: "Residential Villa",
-  description: "2-3 line project description...",
-  status: "Completed",
-  featured: true,                 // true = large card | false = small card
-}
-```
+- Backend is **not required** for the live marketing website
+- The existing backend only provides a simple `/api/status` demo endpoint with MongoDB storage
 
----
+## GitHub Repository Preparation
 
-## Deployment
+This repository has been reviewed for deployment readiness with these outcomes:
 
-### Option 1 — Vercel (Recommended for Frontend)
+- `.gitignore` covers Node, Python, local environment files, Vercel cache, and generated local logs
+- `frontend/package.json` scripts are valid for local dev and production build
+- `frontend/package-lock.json` is present for deterministic npm installs
+- Node engine requirement is declared as `>=18`
+- Build succeeds locally
+- No frontend import failures were found during production build
+- Public SEO assets now support deploy-time site URL stamping
+
+## GitHub Setup Instructions
+
+### Step 1: Create a GitHub Repository
+
+1. Sign in to GitHub.
+2. Create a new repository.
+3. Do not add a README from GitHub if you are pushing this existing project.
+
+### Step 2: Initialize Git Locally
+
+If the repository is not already connected:
 
 ```bash
-# 1. Push code to GitHub
-git init && git add . && git commit -m "Initial commit"
+git init
+git add .
+git commit -m "Prepare project for production deployment"
+```
+
+### Step 3: Add GitHub Remote
+
+```bash
 git remote add origin https://github.com/your-username/svb-constructions.git
-git push -u origin main
-
-# 2. Connect GitHub repo to Vercel
-# Visit: https://vercel.com/new
-# → Import Repository → Select your repo
-# → Framework: Create React App
-# → Root Directory: frontend
-# → Deploy
 ```
 
-**Build Settings for Vercel:**
-```
-Build Command:    yarn build
-Output Directory: build
-Install Command:  yarn install
-```
-
-### Option 2 — Netlify
+### Step 4: Push to GitHub
 
 ```bash
-# Build locally
-cd frontend && yarn build
-
-# Drag & drop the 'build' folder at netlify.com/drop
-# OR connect GitHub repo at app.netlify.com
+git branch -M main
+git push -u origin main
 ```
 
-### Custom Domain Connection
+## GitHub to Vercel Integration Guide
 
-1. Purchase domain (e.g., `svbrconstructions.com`)
-2. In Vercel dashboard → Domains → Add `svbrconstructions.com`
-3. Update DNS records at your registrar:
-   ```
-   Type: A     Name: @    Value: 76.76.21.21
-   Type: CNAME Name: www  Value: cname.vercel-dns.com
-   ```
-4. SSL certificate is provisioned automatically
+### Step 1: Push code to GitHub repository
 
-### Environment Variables for Production
+Push the full repository, including:
 
-Set these in Vercel/Netlify dashboard:
+- `frontend/`
+- `backend/`
+- `README.md`
+- `frontend/package-lock.json`
+
+### Step 2: Connect GitHub repository to Vercel
+
+1. Open [Vercel](https://vercel.com/).
+2. Click **Add New Project**.
+3. Import the GitHub repository.
+
+### Step 3: Configure build settings
+
+Use these settings:
+
+- Framework Preset: `Create React App`
+- Root Directory: `frontend`
+- Install Command: `npm install`
+- Build Command: `npm run build`
+- Output Directory: `build`
+
+Add this environment variable in Vercel before production deployment:
+
+```env
+REACT_APP_SITE_URL=https://your-domain.com
 ```
-REACT_APP_BACKEND_URL = https://your-production-domain.com
+
+Optional:
+
+```env
+ENABLE_HEALTH_CHECK=false
 ```
 
----
+### Step 4: Deploy website
 
-## Brand & Design System
+Click **Deploy** and wait for the build to complete.
 
-### Color Palette
-| Name | Hex | Usage |
-|---|---|---|
-| Brand Navy | `#001F3F` | Primary dark, backgrounds |
-| Brand Gold | `#C8A96B` | Accents, CTAs, highlights |
-| Soft Background | `#F8FAFC` | Section backgrounds |
-| Text Primary | `#0F172A` | Body text |
-| Text Secondary | `#94A3B8` | Subtitles, labels |
-| Border | `#E2E8F0` | Card borders, dividers |
+### Step 5: Add custom domain
 
-### Typography
-- **Headings:** Sora (Google Fonts) — Bold, Semibold
-- **Body:** Inter (Google Fonts) — Regular, Medium
-- **Kannada:** Noto Sans Kannada — Regular, Semibold
+1. Open the Vercel project.
+2. Go to **Settings -> Domains**.
+3. Add your domain, for example `svbrconstructions.com`.
+4. Add DNS records requested by Vercel at your domain registrar.
 
----
+Typical DNS records:
 
-## Business Information
+```text
+Type: A
+Name: @
+Value: 76.76.21.21
 
-| Field | Value |
-|---|---|
-| **Company** | Shree Veerabhadreshwara Constructions |
-| **Brand Name** | SVB Constructions |
-| **Industry** | Civil Engineering & Construction |
-| **Location** | 4HXF+QR8, Gandhi Rd, Nyamati, Karnataka 577223 |
-| **Phone 1** | +91 9035911632 (Sachin G S — Founder) |
-| **Phone 2** | +91 63616 38075 (Sanjay G S — Managing Director) |
-| **Email** | svbrconstructions@gmail.com |
-| **Instagram** | [@svbrconstructions](https://www.instagram.com/svbrconstructions) |
-| **WhatsApp** | [Chat](https://wa.me/919035911632) |
-| **Founded** | 2025 |
-| **Serving Since** | 2009 |
+Type: CNAME
+Name: www
+Value: cname.vercel-dns.com
+```
 
----
+### Step 6: Redeploy after future GitHub commits
+
+After the GitHub repository is connected, every push to the production branch can automatically trigger a new Vercel deployment.
+
+Typical future workflow:
+
+```bash
+git add .
+git commit -m "Update site content"
+git push origin main
+```
+
+## Vercel Deployment Notes
+
+- This project does not use React Router page routes; navigation is section-anchor based.
+- Because of that, no SPA rewrite rule is required for deployment.
+- Static assets are mostly loaded from trusted external URLs plus generated local build assets.
+- `robots.txt`, `sitemap.xml`, canonical URL, and Open Graph URL should always use the final production domain via `REACT_APP_SITE_URL`.
+
+## Forms Review
+
+### Forms Found
+
+There is one production form:
+
+- `frontend/src/components/Contact.jsx`
+
+### How the Current Form Works
+
+- Built with React Hook Form and Zod validation
+- Submits directly to Formspree endpoint `https://formspree.io/f/mwvzzvde`
+- Shows client-side success and error banners based on the submission response
+- Does not use the backend server
+- Does not store leads in your own database
+
+### Form Verification Status
+
+- The implementation is valid and production-appropriate for a simple brochure website
+- Client-side validation is present
+- The live external Formspree submission could not be fully tested from this environment without sending a real lead request
+- No code issue was found that would block submission in a normal browser environment
+
+### Does the Form Need Additional Infrastructure?
+
+For the current site, **no additional infrastructure is required** if your goal is:
+
+- Receive contact emails
+- Avoid maintaining a backend
+- Keep deployment simple on Vercel
+
+### Production Recommendation for Forms
+
+Best current production choice:
+
+- **Keep Formspree**
+
+Use Formspree when you want:
+
+- Fast setup
+- No server maintenance
+- Reliable email delivery for a contact form
+
+Consider **Resend + Vercel Functions** later if you want:
+
+- Branded email sending from your own domain
+- Better control over message formatting
+- Spam handling logic
+- Lead routing or CRM integration
+
+Consider **database storage** later if you want:
+
+- Lead dashboard
+- Admin search/export
+- CRM sync
+- Follow-up workflows
+
+You do **not** need Nodemailer or a custom backend for the current brochure-style website.
+
+## Static Assets and Hosting Assets
+
+Deployment-critical files currently preserved:
+
+- `frontend/public/index.html`
+- `frontend/public/robots.txt`
+- `frontend/public/sitemap.xml`
+- `frontend/package.json`
+- `frontend/package-lock.json`
+- `frontend/craco.config.js`
+- `frontend/postcss.config.js`
+- `frontend/tailwind.config.js`
+
+Asset status:
+
+- Local public SEO files exist and are linked correctly
+- Frontend build assets are generated successfully
+- Image content is largely remote-hosted via external URLs
+- No broken local asset imports were detected during build
+
+## Troubleshooting
+
+### Build fails on Vercel
+
+Check:
+
+- Vercel project root directory is set to `frontend`
+- Node version is 18+
+- Install command is `npm install`
+- Build command is `npm run build`
+
+### Canonical URL, sitemap, or robots point to the wrong domain
+
+Check:
+
+- `REACT_APP_SITE_URL` is set in Vercel project environment variables
+- The project has been redeployed after setting that variable
+
+### Contact form does not send
+
+Check:
+
+- Formspree form ID is still correct in `frontend/src/components/Contact.jsx`
+- Formspree project is active
+- Formspree email forwarding or inbox settings are configured
+- Browser network request to Formspree is not blocked by browser extensions
+
+### Images do not load
+
+Check:
+
+- External image URLs are still available
+- No CDN or hotlink restriction is blocking image delivery
+
+### Google Map does not appear
+
+Check:
+
+- Browser is not blocking iframe embeds
+- The Google Maps embed URL is still valid
+
+## Deployment Checklist
+
+Use this checklist before marking production ready:
+
+- Build succeeds with `npm run build`
+- Vercel root directory is set to `frontend`
+- Correct production domain is set in `REACT_APP_SITE_URL`
+- Responsive design is verified on mobile, tablet, desktop, and large screens
+- SEO metadata is correct for the final domain
+- Open Graph tags are correct for the final domain
+- `robots.txt` is available in production
+- `sitemap.xml` is available in production
+- Contact form works in production
+- Images load correctly in production
+- Google Maps embed loads correctly
+- Phone, email, WhatsApp, and Instagram links work
+- Lighthouse/performance spot-check is acceptable
+- Final domain is connected and SSL is active
+
+## Deployment Commands
+
+### Local build
+
+```bash
+cd frontend
+npm install
+npm run build
+```
+
+### Push latest changes
+
+```bash
+git add .
+git commit -m "Deploy-ready updates"
+git push origin main
+```
+
+## Final Readiness Summary
+
+Current status after review:
+
+- Frontend is ready for GitHub -> Vercel deployment
+- Backend is optional and not required for the current website
+- Build process is working
+- Form setup is suitable for production brochure-site use
+- SEO files are now prepared for production domain stamping
+
+Remaining deployment actions for the project owner:
+
+1. Push the repository to GitHub.
+2. Import it into Vercel with root directory `frontend`.
+3. Set `REACT_APP_SITE_URL` to the real production domain.
+4. Deploy and verify the production contact form.
+5. Connect the custom domain.
 
 ## License
 
-This project is proprietary software developed exclusively for  
-**Shree Veerabhadreshwara Constructions**.  
-All rights reserved © 2025.
+This project is proprietary software developed for **Shree Veerabhadreshwara Constructions**. All rights reserved.

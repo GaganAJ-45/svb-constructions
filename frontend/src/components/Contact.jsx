@@ -14,7 +14,6 @@ const schema = z.object({
   projectType: z.string().min(1, "Please select a project type"),
   budget: z.string().optional(),
   message: z.string().min(10, "Message must be at least 10 characters"),
-  privacy: z.boolean().refine((v) => v === true, "You must agree to the privacy policy"),
 });
 
 const contactInfo = [
@@ -43,7 +42,6 @@ export default function Contact() {
 
   const { register, handleSubmit, reset, formState: { errors } } = useForm({
     resolver: zodResolver(schema),
-    defaultValues: { privacy: false },
   });
 
   const onSubmit = async (data) => {
@@ -260,19 +258,6 @@ export default function Contact() {
                 {errors.message && <p className="text-red-500 text-xs mt-1">{errors.message.message}</p>}
               </div>
 
-              <div className="flex items-start gap-3">
-                <input
-                  data-testid="contact-checkbox-privacy"
-                  type="checkbox"
-                  {...register("privacy")}
-                  className="mt-0.5 w-4 h-4 accent-[#C8A96B] cursor-pointer"
-                  id="privacy"
-                />
-                <label htmlFor="privacy" className="text-[#94A3B8] text-sm cursor-pointer">
-                  I agree to the privacy policy and terms of service
-                </label>
-              </div>
-              {errors.privacy && <p className="text-red-500 text-xs -mt-3">{errors.privacy.message}</p>}
 
               <motion.button
                 type="submit"
