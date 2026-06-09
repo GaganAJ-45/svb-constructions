@@ -2,14 +2,8 @@ const fs = require("fs");
 const path = require("path");
 
 const buildDir = path.join(__dirname, "..", "build");
-const configuredSiteUrl = process.env.REACT_APP_SITE_URL || process.env.SITE_URL;
-
-if (!configuredSiteUrl) {
-  console.warn(
-    "[postbuild] REACT_APP_SITE_URL is not set. Keeping SEO URLs unchanged in the build output."
-  );
-  process.exit(0);
-}
+const fallbackSiteUrl = "https://svb-constructions.vercel.app/";
+const configuredSiteUrl = process.env.REACT_APP_SITE_URL || process.env.SITE_URL || fallbackSiteUrl;
 
 const normalizedSiteUrl = configuredSiteUrl.replace(/\/+$/, "");
 const buildDate = new Date().toISOString().slice(0, 10);

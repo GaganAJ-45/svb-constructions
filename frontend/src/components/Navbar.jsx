@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Phone, Menu, X } from "lucide-react";
 
-const LOGO_URL = "https://customer-assets.emergentagent.com/job_svb-constructions/artifacts/awy71t67_company_logo1.jpeg";
+const LOGO_URL = "/assets/company-logo.jpeg";
 
 const navLinks = [
   { label: "Home", href: "#home" },

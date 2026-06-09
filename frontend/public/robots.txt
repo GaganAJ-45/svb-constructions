@@ -3,4 +3,4 @@ Allow: /
 Disallow: /admin/
 Disallow: /api/
 
-Sitemap: __SITE_URL__/sitemap.xml
+Sitemap: https://svb-constructions.vercel.app/sitemap.xml

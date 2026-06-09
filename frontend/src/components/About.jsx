@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Award, Users, Star, ChevronRight } from "lucide-react";
 
 const ABOUT_IMAGE =
-  "https://customer-assets.emergentagent.com/job_svb-constructions/artifacts/g3fj5mey_about%20us%20photo.jpg";
+  "/assets/about-us-photo.jpg";
 
 const trustBadges = [
   { icon: Award, label: "10+ Years Excellence" },

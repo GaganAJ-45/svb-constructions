@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Phone, Mail, Instagram, MessageCircle } from "lucide-react";
 
 const LOGO_URL =
-  "https://customer-assets.emergentagent.com/job_svb-constructions/artifacts/awy71t67_company_logo1.jpeg";
+  "/assets/company-logo.jpeg";
 
 const WA_LINK = `https://wa.me/919035911632?text=${encodeURIComponent("Hi, I'm interested in your construction services at SVB Constructions. Can you please provide more details?")}`;
 

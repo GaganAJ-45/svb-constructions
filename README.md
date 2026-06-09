@@ -114,7 +114,7 @@ uvicorn server:app --host 0.0.0.0 --port 8001 --reload
 Create `frontend/.env` from `frontend/.env.example` when needed.
 
 ```env
-REACT_APP_SITE_URL=https://your-domain.com
+REACT_APP_SITE_URL=https://svb-constructions.vercel.app/
 ENABLE_HEALTH_CHECK=false
 ```
 
@@ -203,7 +203,7 @@ git commit -m "Prepare project for production deployment"
 ### Step 3: Add GitHub Remote
 
 ```bash
-git remote add origin https://github.com/your-username/svb-constructions.git
+git remote add origin https://github.com/GaganAJ-45/svb-constructions.git
 ```
 
 ### Step 4: Push to GitHub
@@ -243,7 +243,7 @@ Use these settings:
 Add this environment variable in Vercel before production deployment:
 
 ```env
-REACT_APP_SITE_URL=https://your-domain.com
+REACT_APP_SITE_URL=https://svb-constructions.vercel.app/
 ```
 
 Optional:
@@ -291,8 +291,8 @@ git push origin main
 
 - This project does not use React Router page routes; navigation is section-anchor based.
 - Because of that, no SPA rewrite rule is required for deployment.
-- Static assets are mostly loaded from trusted external URLs plus generated local build assets.
-- `robots.txt`, `sitemap.xml`, canonical URL, and Open Graph URL should always use the final production domain via `REACT_APP_SITE_URL`.
+- Website-owned static assets are stored in `frontend/public/assets`.
+- `robots.txt`, `sitemap.xml`, canonical URL, and Open Graph URL should always use `https://svb-constructions.vercel.app/` or the final custom production domain via `REACT_APP_SITE_URL`.
 
 ## Forms Review
 
@@ -459,13 +459,13 @@ Current status after review:
 - Backend is optional and not required for the current website
 - Build process is working
 - Form setup is suitable for production brochure-site use
-- SEO files are now prepared for production domain stamping
+- SEO files are now prepared for `https://svb-constructions.vercel.app/`
 
 Remaining deployment actions for the project owner:
 
 1. Push the repository to GitHub.
 2. Import it into Vercel with root directory `frontend`.
-3. Set `REACT_APP_SITE_URL` to the real production domain.
+3. Set `REACT_APP_SITE_URL` to `https://svb-constructions.vercel.app/` or the final custom domain.
 4. Deploy and verify the production contact form.
 5. Connect the custom domain.
 

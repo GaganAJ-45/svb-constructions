@@ -6,37 +6,37 @@ const services = [
     icon: PenSquare,
     title: "Planning & Design",
     description: "Expert site analysis and architectural design planning tailored to your vision and project requirements.",
-    image: "https://static.prod-images.emergentagent.com/jobs/31d1f9c1-ff79-4b16-8a6e-c94a65559d9a/images/9aef2114dcb97f3daa6bc4c9601d35eea3807efcd4a269e530401369f96f1bc6.png",
+    image: "/assets/service-planning-design.png",
   },
   {
     icon: Box,
     title: "3D Elevation & Visualization",
     description: "Photorealistic 3D renderings that let you visualize and refine your project before a single brick is laid.",
-    image: "https://static.prod-images.emergentagent.com/jobs/31d1f9c1-ff79-4b16-8a6e-c94a65559d9a/images/e5e6fb997eaf92f1507e411424dd98768645b02828d9897cae9d24ed39503277.png",
+    image: "/assets/service-3d-elevation.png",
   },
   {
     icon: Palette,
     title: "Interior Design",
     description: "Modern, functional, and aesthetically pleasing interior designs that balance luxury with livability.",
-    image: "https://static.prod-images.emergentagent.com/jobs/31d1f9c1-ff79-4b16-8a6e-c94a65559d9a/images/1b78f36e1544c6ec42b57ba3b68842bec3040145e060f824cc1e52c2cfb19509.png",
+    image: "/assets/service-interior-design.png",
   },
   {
     icon: Calculator,
     title: "Estimation & Costing",
     description: "Transparent and detailed cost breakdowns for accurate budgeting — no surprises, just clarity.",
-    image: "https://static.prod-images.emergentagent.com/jobs/31d1f9c1-ff79-4b16-8a6e-c94a65559d9a/images/08493857bfb8c3dac179be901acd655ac7819c6a310c87068466ca9d4d8d6baa.png",
+    image: "/assets/service-estimation-costing.png",
   },
   {
     icon: Briefcase,
     title: "Expert Consulting",
     description: "Strategic guidance at every stage of your construction journey from concept through to completion.",
-    image: "https://static.prod-images.emergentagent.com/jobs/31d1f9c1-ff79-4b16-8a6e-c94a65559d9a/images/ea20767c005cf98821a285ca9fce8ad89ad209ff1cc28f5092eff6ec51d5d69c.png",
+    image: "/assets/service-expert-consulting.png",
   },
   {
     icon: HardHat,
     title: "Construction Management",
     description: "Full-scale construction execution with rigorous quality control and consistent on-time delivery.",
-    image: "https://static.prod-images.emergentagent.com/jobs/31d1f9c1-ff79-4b16-8a6e-c94a65559d9a/images/f08bd8bd4eb26514b2687b01cd6773febeb5b0da82747ff0cc326f6c6b988877.png",
+    image: "/assets/service-construction-management.png",
   },
 ];
 
