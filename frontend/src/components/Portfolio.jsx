@@ -170,23 +170,12 @@ function MasonryGrid({ projects, onView }) {
 
 /* ─── Project Modal ─────────────────────────────────── */
 function ProjectModal({ project, onClose }) {
-  const modalImages = [
-    { image: project.image, alt: project.alt || project.name },
-    ...(project.gallery || []),
-  ];
-  const [activeImageIndex, setActiveImageIndex] = useState(0);
-  const activeImage = modalImages[activeImageIndex];
-
   useEffect(() => {
     document.body.style.overflow = "hidden";
     const onEsc = (e) => { if (e.key === "Escape") onClose(); };
     window.addEventListener("keydown", onEsc);
     return () => { document.body.style.overflow = ""; window.removeEventListener("keydown", onEsc); };
   }, [onClose]);
-
-  useEffect(() => {
-    setActiveImageIndex(0);
-  }, [project.id]);
 
   return (
     <motion.div
@@ -220,8 +209,8 @@ function ProjectModal({ project, onClose }) {
           }}
         >
           <img
-            src={activeImage.image}
-            alt={activeImage.alt || project.name}
+            src={project.image}
+            alt={project.alt || project.name}
             className="max-w-full object-contain"
             style={{
               height: "auto",
@@ -230,34 +219,6 @@ function ProjectModal({ project, onClose }) {
             }}
           />
         </div>
-
-        {modalImages.length > 1 && (
-          <div className="flex gap-2 overflow-x-auto border-b border-[#E2E8F0] bg-white px-4 py-3">
-            {modalImages.map((image, index) => {
-              const active = index === activeImageIndex;
-              return (
-                <button
-                  key={image.image}
-                  type="button"
-                  onClick={() => setActiveImageIndex(index)}
-                  className="h-16 w-24 flex-shrink-0 overflow-hidden rounded-md border bg-[#F8FAFC] transition-all"
-                  style={{
-                    borderColor: active ? "#C8A96B" : "#E2E8F0",
-                    opacity: active ? 1 : 0.72,
-                  }}
-                  aria-label={`View ${project.name} image ${index + 1}`}
-                >
-                  <img
-                    src={image.image}
-                    alt={image.alt || `${project.name} thumbnail ${index + 1}`}
-                    className="h-full w-full object-contain"
-                    loading="lazy"
-                  />
-                </button>
-              );
-            })}
-          </div>
-        )}
 
         {/* Close button */}
         <button
