@@ -52,17 +52,6 @@ body {
 ::-webkit-scrollbar-thumb { background: #C8A96B; border-radius: 3px; }
 ::-webkit-scrollbar-thumb:hover { background: #b3955a; }
 
-/* Scroll progress bar */
-.scroll-progress {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 3px;
-  background: linear-gradient(to right, #C8A96B, #f0d090);
-  z-index: 9999;
-  transition: width 0.1s linear;
-}
-
 /* Blueprint grid overlay for hero */
 .blueprint-grid {
   background-image:

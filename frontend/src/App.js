@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import "./App.css";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
@@ -16,26 +15,8 @@ import Footer from "./components/Footer";
 import FloatingButtons from "./components/FloatingButtons";
 
 function App() {
-  const [scrollProgress, setScrollProgress] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const total = document.documentElement.scrollHeight - window.innerHeight;
-      const progress = total > 0 ? (window.scrollY / total) * 100 : 0;
-      setScrollProgress(progress);
-    };
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   return (
     <div className="font-inter min-h-screen bg-white overflow-x-hidden">
-      {/* Scroll progress bar */}
-      <div
-        data-testid="scroll-progress-bar"
-        className="scroll-progress"
-        style={{ width: `${scrollProgress}%` }}
-      />
       <header>
         <Navbar />
       </header>
