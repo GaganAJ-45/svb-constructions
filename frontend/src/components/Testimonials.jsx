@@ -6,22 +6,25 @@ const testimonials = [
   {
     text: "SVB Constructions delivered our dream home well beyond our expectations. The attention to detail, quality of materials, and the precision in every finishing touch was truly outstanding. Highly recommend for any premium residential project.",
     name: "Rajesh Kumar",
-    project: "Luxury Villa, North Bengaluru",
-    photo: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA3MDB8MHwxfHNlYXJjaHwxfHxoYXBweSUyMGNsaWVudCUyMHBvcnRyYWl0JTIwaGVhZHNob3R8ZW58MHx8fHwxNzgwMDY4MDY4fDA&ixlib=rb-4.1.0&q=85",
+    project: "Luxury Villa, Nyamathi, Karnataka",
     rating: 5,
   },
   {
     text: "Outstanding commercial project execution. The team was professional, always on schedule, and delivered within the agreed budget. Their engineering expertise and project management is evident in every aspect of the completed structure.",
     name: "Priya Sharma",
-    project: "Corporate Office Complex, Electronic City",
-    photo: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA3MDB8MHwxfHNlYXJjaHwzfHxoYXBweSUyMGNsaWVudCUyMHBvcnRyYWl0JTIwaGVhZHNob3R8ZW58MHx8fHwxNzgwMDY4MDY4fDA&ixlib=rb-4.1.0&q=85",
+    project: "Commercial Project, Davanagere, Karnataka",
     rating: 5,
   },
   {
     text: "From initial planning through final handover, the entire process was smooth, transparent, and stress-free. The 3D visualization helped us make better design decisions early on. Truly a premium construction experience worth every rupee.",
     name: "Anand Nair",
-    project: "Luxury Penthouse Interiors, Indiranagar",
-    photo: "https://images.unsplash.com/photo-1580489944761-15a19d654956?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA3MDB8MHwxfHNlYXJjaHwyfHxoYXBweSUyMGNsaWVudCUyMHBvcnRyYWl0JTIwaGVhZHNob3R8ZW58MHx8fHwxNzgwMDY4MDY4fDA&ixlib=rb-4.1.0&q=85",
+    project: "Residential Interiors, Shivamogga, Karnataka",
+    rating: 5,
+  },
+  {
+    text: "ಎಸ್‌ವಿಬಿ ಕನ್ಸ್ಟ್ರಕ್ಷನ್ಸ್ ನಮ್ಮ ಮನೆಯ ನಿರ್ಮಾಣವನ್ನು ಅತ್ಯುತ್ತಮ ಗುಣಮಟ್ಟದಲ್ಲಿ ಪೂರ್ಣಗೊಳಿಸಿದೆ. ಕೆಲಸ ಸಮಯಕ್ಕೆ ಸರಿಯಾಗಿ ಮುಗಿದು, ಪ್ರತಿಯೊಂದು ಹಂತದಲ್ಲೂ ವೃತ್ತಿಪರ ಸೇವೆ ನೀಡಿದರು. ನಾವು ಸಂಪೂರ್ಣ ತೃಪ್ತರಾಗಿದ್ದೇವೆ.",
+    name: "Manjunath H",
+    project: "Nyamathi, Karnataka",
     rating: 5,
   },
 ];
@@ -96,11 +99,6 @@ export default function Testimonials() {
 
               {/* Client info */}
               <div className="flex items-center gap-4 pt-6 border-t border-white/10">
-                <img
-                  src={testimonials[current].photo}
-                  alt={testimonials[current].name}
-                  className="w-14 h-14 rounded-full object-cover border-2 border-[#C8A96B]/50"
-                />
                 <div>
                   <p className="font-sora font-semibold text-[#C8A96B] text-base">
                     {testimonials[current].name}

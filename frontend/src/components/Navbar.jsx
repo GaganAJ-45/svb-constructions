@@ -39,7 +39,7 @@ export default function Navbar() {
           backdropFilter: scrolled ? "none" : "blur(12px)",
           WebkitBackdropFilter: scrolled ? "none" : "blur(12px)",
           boxShadow: scrolled ? "0 4px 24px rgba(0,0,0,0.3)" : "none",
-          borderBottom: scrolled ? "none" : "1px solid rgba(200, 169, 107, 0.15)",
+          borderBottom: "none",
         }}
       >
         <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
@@ -77,15 +77,6 @@ export default function Navbar() {
                 onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(255,255,255,0.85)")}
               >
                 {link.label}
-                <span
-                  className="absolute bottom-0 left-0 w-0 group-hover:w-full"
-                  style={{
-                    height: "2px",
-                    background: "#C8A96B",
-                    transition: "width 0.3s ease",
-                    display: "block",
-                  }}
-                />
               </a>
             ))}
           </div>
