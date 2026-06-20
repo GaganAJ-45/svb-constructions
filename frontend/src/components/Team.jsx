@@ -9,7 +9,7 @@ const team = [
     experienceLabel: "Years in Civil Engineering",
     bio: "Sachin G S is the founder of Shree Veerabhadreshwara Constructions. A skilled civil engineer based in Nyamathi, Sachin G S leads all major construction projects at SVB Constructions with over 12 years of experience.",
     photo: "/assets/team-sachin.jpeg",
-    photoPosition: "object-center object-top",
+    photoPosition: "center 20%",
     email: "svbrconstructions@gmail.com",
     instagram: "https://www.instagram.com/sachings_sachin?igsh=aG8ycjE3d21wcG4x",
     whatsapp: `https://wa.me/919035911632?text=${encodeURIComponent("Hi Sachin, I'm interested in starting a construction project with SVB Constructions. Can we connect?")}`,
@@ -22,7 +22,7 @@ const team = [
     experienceLabel: "Years in Project Management",
     bio: "Sanjay K S serves as Director at SVB Constructions, Nyamathi. With deep expertise in civil engineering and project management, Sanjay K S oversees quality standards across all projects in Nyamathi, Honnali and Shivamogga.",
     photo: "/assets/team-sanjay.jpeg",
-    photoPosition: "object-center",
+    photoPosition: "top center",
     email: "svbrconstructions@gmail.com",
     instagram: "https://www.instagram.com/sanjukssanjay?igsh=MTltanJiYWY3cnk0eA==",
     whatsapp: `https://wa.me/916361638075?text=${encodeURIComponent("Hi Sanjay, I'm interested in discussing a construction project with SVB Constructions. Can we connect?")}`,
@@ -35,7 +35,7 @@ const team = [
     experienceLabel: "Years in Structural Design",
     bio: "Panchappa A G is the senior civil engineer at Shree Veerabhadreshwara Constructions, with 25+ years of structural design expertise across Nyamathi, Karnataka. Panchappa A G oversees technical quality across all SVB Constructions projects.",
     photo: "/assets/team-panchappa.jpeg",
-    photoPosition: "object-top object-center",
+    photoPosition: "top center",
     email: "svbrconstructions@gmail.com",
     instagram: "#",
     whatsapp: `https://wa.me/919035911632?text=${encodeURIComponent("Hi, I'd like to discuss a construction project with SVB Constructions. Can we connect?")}`,
@@ -115,11 +115,12 @@ export default function Team() {
                 </div>
 
                 {/* ── Professional photo ── */}
-                <div className="relative bg-[#F1F5F9] overflow-hidden" style={{ height: "300px" }}>
+                <div className="relative bg-[#F1F5F9] overflow-hidden" style={{ height: "380px" }}>
                   <img
                     src={member.photo}
                     alt={`${member.name} - ${member.designation}, Shree Veerabhadreshwara Constructions`}
-                    className={`w-full h-full object-cover ${member.photoPosition} transition-transform duration-500 group-hover:scale-105`}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    style={{ objectPosition: member.photoPosition }}
                     loading="lazy"
                   />
                   {/* Subtle bottom gradient for name area */}
