@@ -70,7 +70,11 @@ export default function Hero() {
             loading={img.loading}
             fetchPriority={i === 0 ? "high" : undefined}
             className="absolute inset-0 w-full h-full object-cover object-center"
-            style={{ opacity: i === current ? 1 : 0, transition: "opacity 1.2s ease-in-out" }}
+            style={{
+              opacity: i === current ? 1 : 0,
+              transition: "opacity 1.2s ease-in-out",
+              filter: "brightness(0.75) contrast(1.05)",
+            }}
           />
         ))}
       </div>
@@ -79,7 +83,7 @@ export default function Hero() {
       <div
         className="absolute inset-0 z-[1]"
         style={{
-          background: "linear-gradient(135deg, rgba(0,0,0,0.82) 0%, rgba(0,31,63,0.65) 50%, rgba(0,0,0,0.78) 100%)",
+          background: "linear-gradient(135deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 31, 63, 0.45) 50%, rgba(0, 0, 0, 0.50) 100%)",
         }}
       />
 

@@ -44,7 +44,12 @@ export default function ProcessTimeline() {
   return (
     <section
       data-testid="process-section"
-      className="py-24 md:py-32 bg-[#F8FAFC] overflow-hidden"
+      className="py-24 md:py-32 overflow-hidden"
+      style={{
+        backgroundColor: "#F1F5F9",
+        borderTop: "1px solid #E2E8F0",
+        borderBottom: "1px solid #E2E8F0",
+      }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
