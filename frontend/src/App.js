@@ -6,7 +6,6 @@ import Services from "./components/Services";
 import About from "./components/About";
 import WhyChooseUs from "./components/WhyChooseUs";
 import Team from "./components/Team";
-import Certifications from "./components/Certifications";
 import Portfolio from "./components/Portfolio";
 import ProcessTimeline from "./components/ProcessTimeline";
 import Testimonials from "./components/Testimonials";
@@ -27,7 +26,6 @@ function App() {
         <About />
         <WhyChooseUs />
         <Team />
-        <Certifications />
         <Portfolio />
         <ProcessTimeline />
         <Testimonials />

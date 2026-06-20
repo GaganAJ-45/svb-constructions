@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { MessageCircle, ChevronUp } from "lucide-react";
+import { ChevronUp } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 
 const WHATSAPP_NUMBER = "919035911632";
 const WHATSAPP_MESSAGE = encodeURIComponent("Hi, I'm interested in your construction services at SVB Constructions. Can you please provide more information about your projects and pricing?");
@@ -65,16 +66,39 @@ export default function FloatingButtons() {
           initial={{ opacity: 0, scale: 0 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 1.5, type: "spring", stiffness: 260, damping: 20 }}
-          whileHover={{ scale: 1.12 }}
+          whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.93 }}
           onMouseEnter={() => setShowTooltip(true)}
           onMouseLeave={() => setShowTooltip(false)}
-          className="w-14 h-14 rounded-full bg-[#25D366] flex items-center justify-center shadow-xl hover:shadow-[#25D366]/40 hover:shadow-2xl transition-all duration-300 animate-pulse-gold"
           aria-label="Chat on WhatsApp"
+          style={{
+            width: "56px",
+            height: "56px",
+            borderRadius: "50%",
+            background: "#25D366",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            boxShadow: "0 4px 12px rgba(0,0,0,0.25)",
+            animation: "wa-pulse 3s ease-in-out infinite",
+          }}
         >
-          <MessageCircle size={26} color="white" strokeWidth={1.5} fill="white" />
+          <FaWhatsapp size={28} color="white" />
         </motion.a>
       </div>
+
+      <style>{`
+        @keyframes wa-pulse {
+          0%, 100% { transform: scale(1); }
+          50% { transform: scale(1.05); }
+        }
+        @media (max-width: 640px) {
+          [data-testid="floating-whatsapp-btn"] {
+            width: 48px !important;
+            height: 48px !important;
+          }
+        }
+      `}</style>
     </div>
   );
 }

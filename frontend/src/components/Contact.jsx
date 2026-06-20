@@ -33,7 +33,7 @@ const contactInfo = [
   {
     icon: MapPin,
     label: "Address",
-    lines: [{ text: "4HXF+QR8, Gandhi Rd, Nyamati, Karnataka 577223", href: "https://maps.google.com/maps?q=4HXF%2BQR8+Gandhi+Rd+Nyamati+Karnataka+577223" }],
+    lines: [{ text: "Shree Veerabhadreshwara Constructions, Gandhi Rd, Nyamati, Karnataka 577223", href: "https://www.google.com/maps/search/?api=1&query=Shree+Veerabhadreshwara+Constructions%2C+Gandhi+Rd%2C+Nyamati%2C+Karnataka+577223" }],
   },
 ];
 
@@ -123,11 +123,11 @@ export default function Contact() {
             {/* Google Map */}
             <div className="rounded-xl overflow-hidden border border-[#E2E8F0] shadow-sm" data-testid="contact-map">
               <iframe
-                title="SVB Constructions Location — 4HXF+QR8, Gandhi Rd, Nyamati"
-                src="https://maps.google.com/maps?q=4HXF%2BQR8+Gandhi+Rd+Nyamati+Karnataka+577223&output=embed&z=16"
+                title="Shree Veerabhadreshwara Constructions location on Google Maps"
+                src="https://maps.google.com/maps?q=Shree+Veerabhadreshwara+Constructions%2C+Gandhi+Rd%2C+Nyamati%2C+Karnataka+577223&output=embed"
                 width="100%"
                 height="300"
-                style={{ border: 0 }}
+                style={{ border: 0, borderRadius: '12px' }}
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"

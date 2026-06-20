@@ -19,7 +19,6 @@ const company = [
   { label: "About Us", href: "#about" },
   { label: "Portfolio", href: "#portfolio" },
   { label: "Our Team", href: "#team" },
-  { label: "Certifications", href: "#certifications" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -42,7 +41,7 @@ export default function Footer() {
               2025.
             </p>
             <p className="text-[#C8A96B] text-xs uppercase tracking-widest font-medium">
-              Shivamogga, Karnataka, India
+              Gandhi Rd, Nyamati, Karnataka 577223
             </p>
           </motion.div>
 
